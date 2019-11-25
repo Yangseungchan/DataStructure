@@ -80,8 +80,6 @@
     * If there is the problem when you input "git pull origin master" such as; "fatal: refusing to merge unrelated histories", then
     you can solve this problem by inputting "git pull origin master --allow-unrelated-histories". After that, what you have to do is to start the processes
     from commiting.
-
-    Keep.
      
   
 
