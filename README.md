@@ -5,11 +5,13 @@
 1. Deleting previous account information
 
      $ git config --global user.email --unset credential.helper
+
      $ git config --global user.name --unset credential.helper
 
 2. Inputing email and name information for initialization
     
      $ git config --global user.email --"input@your.mail"
+
      $ git config --global user.name "Your name" or "nickname"
 
     * if there is an error like "error: cannot overwrite multiple values with a single value", then just dismiss it.
@@ -17,7 +19,9 @@
 3.  Make your directory for using at your own repository. (Using cmd such as "mkdir", "cd")
 
     Let's assume that your directory name is "example" Then,
+
      $ mkdir example
+
      $ cd example
     
     * You can check your current directory by using cmd "pwd"
@@ -32,6 +36,7 @@
 # (2) Adding and Committing the files
 
 1. Add the file
+
     Let's assume the added file is "example.c"
 
      $ git add example.c
@@ -46,9 +51,13 @@
 * git status check cmd
 
      $ git show
+     
      $ git log
+
      $ git shortlog
+
      $ git diff
+     
      $ git status
 
 3. Check the status whether there is any added contents.
@@ -63,7 +72,8 @@
 
 # (4) Linking the current directory with the github repository
 
-1. Connection  
+1. Connection
+  
     * Let's assume your repository link as "https://github.com/Yangseungchan/DataStructure.git"
 
      $ git remote origin master "https://github.com/Yangseungchan/DataStructure.git"
