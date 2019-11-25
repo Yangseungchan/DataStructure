@@ -20,13 +20,13 @@
     $ mkdir example
     $ cd example
     
-    *You can check your current directory by using cmd "pwd"
+    * You can check your current directory by using cmd "pwd"
 
 4. Start of git
 
     $ git init 
     
-    *You can check .git folder in your directory by using cmd "ls -A"
+    * You can check .git folder in your directory by using cmd "ls -A"
 
 
 # (2) Adding and Committing the files
