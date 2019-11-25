@@ -59,7 +59,7 @@
 
 # (3) Make your own repository in github homepage
 
-    * You need toi copy the URL of your repository.
+     You need to copy the URL of your repository.
 
 # (4) Linking the current directory with the github repository
 
