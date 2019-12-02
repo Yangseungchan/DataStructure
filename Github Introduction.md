@@ -18,11 +18,11 @@
 
      $ git config --global --replace-all user.email "your@mail.com"
 
-     (Erasing all previously enrolled email and replacing them with new mail which you input at this command.)
+    * Erasing all previously enrolled email and replacing them with new mail which you input at this command.)
 
      $ git config --global --replace-all user.name "Yangseungchan"
 
-     (Erasing all previously enrolled name and replacing them with new name which you input at this command.)
+    * Erasing all previously enrolled name and replacing them with new name which you input at this command.)
 
 3.  Make your directory for using at your own repository. (Using cmd such as "mkdir", "cd")
 
