@@ -14,7 +14,15 @@
 
      $ git config --global user.name "Your name" or "nickname"
 
-    * if there is an error like "error: cannot overwrite multiple values with a single value", then just dismiss it.
+    * if there is an error like "error: cannot overwrite multiple values with a single value", then you can use these commands.
+
+     $ git config --global --replace-all user.email "your@mail.com"
+
+     (Erasing all previously enrolled email and replacing them with new mail which you input at this command.)
+
+     $ git config --global --replace-all user.name "Yangseungchan"
+
+     (Erasing all previously enrolled name and replacing them with new name which you input at this command.)
 
 3.  Make your directory for using at your own repository. (Using cmd such as "mkdir", "cd")
 
