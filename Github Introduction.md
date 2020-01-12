@@ -4,7 +4,7 @@
 
 1. Deleting previous account information
 
-     $ git config --global user.email --unset credential.helper
+     \$ git config --global user.email --unset credential.helper
 
      $ git config --global user.name --unset credential.helper
 
