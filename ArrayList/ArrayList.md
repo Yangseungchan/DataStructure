@@ -2,9 +2,8 @@
 
 ## 1. Introuction
 It's the **List** based on **Array**.
-
-
-
+<br/>
+<br/>
 ## 2. ADT and Functions of ArrayList
 
 ### 2-1.  ADT
@@ -29,9 +28,6 @@ A --> D(curPosition)
 - **curPosition** : It's an integer that contains the top position in arr[LIST_LEN].
 <br/>
 <br/>
-
-
-
 ### 2-2. Functions
 ---
 
