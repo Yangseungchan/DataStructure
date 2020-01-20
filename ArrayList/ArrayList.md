@@ -29,10 +29,10 @@ A --> D(curPosition)
 - **curPosition** : It's an integer that contains the top position in arr[LIST_LEN].
 <br/>
 <br/>
-### 2-2. Functions
----
 
->Those functions are written for the basic functionality of ArrayList like **Inserting, Deleting, Searching.**
+### 2-2. Functions
+
+Those functions are written for the basic functionality of ArrayList like **Inserting, Deleting, Searching.**
 
 
 #### 1. ListInit
@@ -46,8 +46,8 @@ A --> D(curPosition)
 
 ## 3. Pros and Cons
 
-#### 3-1 Pros
-#### 3-2 Cons
+### 3-1 Pros
+### 3-2 Cons
 
 ## 4. Conclusion
 
