@@ -6,11 +6,12 @@
 
 #define LIST_LEN 100
 
-typedef struct __ArrayList{
+typedef struct __ArrayList
+{
     int arr[LIST_LEN];
-    int numofData; /* the number of the datas in arraylist */
+    int numofData;   /* the number of the datas in arraylist */
     int curPosition; /* the variable that indicates the last(top) position of data in arraylist */
-}ArrayList;
+} ArrayList;
 
 typedef ArrayList List;
 
@@ -23,6 +24,5 @@ void ListPrint(List *plist); /* function that prints the whole datas of the list
 int LRemove(List *plist); /* function that deletes the last component in arraylist */
 
 int LCount(List *plist); /* function that returns the number of the data in arraylist */
-
 
 #endif

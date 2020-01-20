@@ -4,27 +4,29 @@
 #define TRUE 1
 #define FALSE 0
 
-typedef struct __node{  /* structure of the node */
-    int data; 
+typedef struct __node
+{ /* structure of the node */
+    int data;
     struct __node *next;
-}Node;
+} Node;
 
-typedef struct __linkedlist{ /* structure of the LilnkedList */
+typedef struct __linkedlist
+{ /* structure of the LilnkedList */
     Node *head;
     Node *tail;
     int count;
 
-}LinkedList;
+} LinkedList;
 
-typedef LinkedList LList;    /* rename the LinkedList as List */
+typedef LinkedList LList; /* rename the LinkedList as List */
 
-Node *InitNode();   /* function that initializes the Node */
+Node *InitNode(); /* function that initializes the Node */
 
 void InitList(LList *llist); /* function that initializes the List */
 
 int InsertData(LList *llist, int data); /* function that inserts a new data */
 
-int DeleteData(LList *llist, int data);  /* function that deletes the selected component in list */
+int DeleteData(LList *llist, int data); /* function that deletes the selected component in list */
 
 int SearchData(LList *llist, int data); /* function that finds the data whether it is in list */
 
