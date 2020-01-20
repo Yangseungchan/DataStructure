@@ -1,7 +1,7 @@
 # ArrayList
 
 ## 1. Introuction
-It's the **List** based on **Array**.
+It's the **List** based on **Array**.\
 
 
 ## 2. ADT and Functions of ArrayList
