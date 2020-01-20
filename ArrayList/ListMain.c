@@ -11,24 +11,25 @@ int main()
 
     do
     {
-        printf("Input the cmd that you want to execute (1 = INSERT, 2 = DELETE, 3 = PRINT, 4 = # of Data, 5 = EXIT) : ");
+        printf("Input the cmd that you want to execute (1 = INSERT, 2 = DELETE, 3 = PRINT, 4 = # of Data, 5 = Search, 6 = Exit) : ");
         scanf("%d", &cmd);
         switch (cmd)
         {
         case 1:
             printf("Input the data that you want to insert : ");
             scanf("%d", &num);
+            putchar('\n');
             result = LInsert(&arrList, num);
             if (result == FALSE)
             {
-                printf("# FAILURE TO INSERT DATA; No More Space #\n");
+                printf("# FAILURE TO INSERT DATA; No More Space #\n\n");
             }
             break;
         case 2:
             result = LRemove(&arrList);
             if (result == FALSE)
             {
-                printf("# FAILURE TO DELETE DATA; No Data to Delete #\n");
+                printf("# FAILURE TO DELETE DATA; No Data to Delete #\n\n");
             }
             break;
         case 3:
@@ -36,13 +37,19 @@ int main()
             break;
         case 4:
             printf("Num of Data : %d\n", LCount(&arrList));
+            break;
         case 5:
+            printf("Input the data that you want to search : ");
+            scanf("%d", &num);
+            LSearch(&arrList, num);
+            break;
+        case 6:
             break;
         default:
             printf("Wrong cmd input; Try Again\n");
             break;
         }
-    } while (cmd != 5);
+    } while (cmd != 6);
 
     return 0;
 }

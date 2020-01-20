@@ -33,7 +33,7 @@ void ListPrint(List *plist) /* function that prints the whole datas of the list 
     {
         if (i == plist->curPosition)
         {
-            printf("%d\n", plist->arr[i]);
+            printf("%d\n\n", plist->arr[i]);
         }
         else
         {
@@ -52,7 +52,7 @@ int LRemove(List *plist) /* function that deletes the last component in arraylis
     }
     else
     {
-        printf("# FAILURE TO DELETE DATA; NO MORE DATAS TO DELETE #\n");
+        printf("# FAILURE TO DELETE DATA; NO MORE DATAS TO DELETE #\n\n");
         return FALSE;
     }
 }
@@ -60,4 +60,27 @@ int LRemove(List *plist) /* function that deletes the last component in arraylis
 int LCount(List *plist) /* function that returns the number of the data in arraylist */
 {
     return plist->numofData;
+}
+
+int LSearch(List *plist, int data) /* function that finds the given input data in arrayList. When it finds the data, then it returns its TRUE and print index. Else it returns FALSE */
+{
+    int i;
+    if (plist->curPosition == -1)
+    {
+        printf("# FAILURE TO FIND THE DATA#\n\n");
+        return FALSE;
+    }
+    else
+    {
+        for (i = 0; i < plist->numofData; i++)
+        {
+            if (plist->arr[i] == data)
+            {
+                printf("The given data is positioned at #%d in ArrayList\n\n", i + 1);
+                return TRUE;
+            }
+        }
+        printf("# FAILURE TO FIND THE DATA#\n\n");
+        return FALSE;
+    }
 }

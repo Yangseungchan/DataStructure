@@ -25,4 +25,6 @@ int LRemove(List *plist); /* function that deletes the last component in arrayli
 
 int LCount(List *plist); /* function that returns the number of the data in arraylist */
 
+int LSearch(List *plist, int data); /* function that finds the given input data in arrayList. When it finds the data, then it returns its TRUE and print index. Else it returns FALSE */
+
 #endif
