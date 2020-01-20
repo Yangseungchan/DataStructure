@@ -3,6 +3,8 @@
 ## 1. Introuction
 It's the **List** based on **Array**.
 
+
+
 ## 2. ADT and Functions of ArrayList
 
 ### 2-1.  ADT
