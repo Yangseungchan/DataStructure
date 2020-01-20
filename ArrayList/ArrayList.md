@@ -8,8 +8,7 @@ It's the **List** based on **Array**.
 ## 2. ADT and Functions of ArrayList
 
 ### 2-1.  ADT
----
- >The Composition of the **ArrayList** as follows.
+ The Composition of the **ArrayList** as follows.
 
 ```mermaid
 graph LR
