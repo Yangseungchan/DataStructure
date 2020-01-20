@@ -1,6 +1,6 @@
 # ArrayList
 <br/>
-<br/>
+
 ## 1. Introuction
 It's the **List** based on **Array**.
 <br/>
