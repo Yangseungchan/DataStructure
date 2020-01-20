@@ -22,11 +22,12 @@ A --> D(curPosition)
 > **LIST_LEN** is defined constant as 100.
 - **arr[LIST_LEN]** : It's the array that contains the datas that are inserted.
 <br/>
+
 - **numofData** : It's an integer that contains how many datas are in arr[LIST_LEN].
 <br/>
+
 - **curPosition** : It's an integer that contains the top position in arr[LIST_LEN].
 
----
 
 
 
