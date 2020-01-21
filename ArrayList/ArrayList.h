@@ -21,7 +21,7 @@ int LInsert(List *plist, int data); /* function that inserts a new data */
 
 void ListPrint(List *plist); /* function that prints the whole datas of the list */
 
-int LRemove(List *plist); /* function that deletes the last component in arraylist */
+int LRemove(List *plist, int data); /* function that deletes input data in arraylist */
 
 int LCount(List *plist); /* function that returns the number of the data in arraylist */
 

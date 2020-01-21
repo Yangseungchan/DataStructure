@@ -26,17 +26,20 @@ int main()
             }
             break;
         case 2:
-            result = LRemove(&arrList);
+            printf("Input the data that you want to delete : ");
+            scanf("%d", &num);
+            putchar('\n');
+            result = LRemove(&arrList, num);
             if (result == FALSE)
             {
-                printf("# FAILURE TO DELETE DATA; No Data to Delete #\n\n");
+                //printf("# FAILURE TO DELETE DATA; No Data to Delete #\n\n");
             }
             break;
         case 3:
             ListPrint(&arrList);
             break;
         case 4:
-            printf("Num of Data : %d\n", LCount(&arrList));
+            printf("Num of Data : %d\n\n", LCount(&arrList));
             break;
         case 5:
             printf("Input the data that you want to search : ");
