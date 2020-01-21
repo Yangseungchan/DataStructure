@@ -62,6 +62,10 @@ int LRemove(List *plist, int data) /* function that deletes input data in arrayl
                 for (j = i; j < plist->numofData - 1; j++) /* 1. Delete the selected data */
                 {
                     plist->arr[j] = plist->arr[j + 1]; /* 2. The datas that are behind the one to be deleted are moved to left by one index */
+                    if (j == plist->numofData - 2)     /* At last non -1 component, it is filled with -1 */
+                    {
+                        plist->arr[j + 1] = -1;
+                    }
                 }
                 plist->numofData--;
                 return TRUE;
