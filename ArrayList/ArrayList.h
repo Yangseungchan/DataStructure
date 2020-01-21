@@ -9,8 +9,7 @@
 typedef struct __ArrayList
 {
     int arr[LIST_LEN];
-    int numofData;   /* the number of the datas in arraylist */
-    int curPosition; /* the variable that indicates the last(top) position of data in arraylist */
+    int numofData; /* the number of the datas in arraylist */
 } ArrayList;
 
 typedef ArrayList List;

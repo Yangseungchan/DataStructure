@@ -9,7 +9,6 @@ void ListInit(List *plist) /* function that initializes the ArrayList */
         plist->arr[i] = -1;
     }
     plist->numofData = 0;
-    plist->curPosition = -1; /* it means that there isn't any data in list */
 }
 
 int LInsert(List *plist, int data) /* function that inserts the new data */
@@ -20,7 +19,7 @@ int LInsert(List *plist, int data) /* function that inserts the new data */
     }
     else
     {
-        plist->arr[++plist->curPosition] = data;
+        plist->arr[plist->numofData] = data;
         plist->numofData++;
         return TRUE;
     }
@@ -36,9 +35,9 @@ void ListPrint(List *plist) /* function that prints the whole datas of the list 
     else
     {
         printf("ArrayList : ");
-        for (size_t i = 0; i <= plist->curPosition; i++)
+        for (size_t i = 0; i <= plist->numofData - 1; i++)
         {
-            if (i == plist->curPosition)
+            if (i == plist->numofData - 1)
             {
                 printf("%d\n\n", plist->arr[i]);
             }
@@ -60,11 +59,10 @@ int LRemove(List *plist, int data) /* function that deletes input data in arrayl
         {
             if (plist->arr[i] == data) /* when it finds the data that you want to delete */
             {
-                for (j = i; j < plist->curPosition; j++) /* 1. Delete the selected data */
+                for (j = i; j < plist->numofData - 1; j++) /* 1. Delete the selected data */
                 {
                     plist->arr[j] = plist->arr[j + 1]; /* 2. The datas that are behind the one to be deleted are moved to left by one index */
                 }
-                plist->curPosition--; /* subtract 1 from curPosition and numofData to indicate the removal of one data */
                 plist->numofData--;
                 return TRUE;
             }
@@ -87,7 +85,7 @@ int LCount(List *plist) /* function that returns the number of the data in array
 int LSearch(List *plist, int data) /* function that finds the given input data in arrayList. If it finds the data, then it returns TRUE and print index. Else it returns FALSE */
 {
     int i;
-    if (plist->curPosition == -1) /* In case that there isn't any data in ArrayList */
+    if (plist->numofData == 0) /* In case that there isn't any data in ArrayList */
     {
         printf("# FAILURE TO FIND THE DATA#\n\n");
         return FALSE;
