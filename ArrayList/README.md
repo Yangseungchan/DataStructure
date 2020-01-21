@@ -42,16 +42,19 @@ A --> D(curPosition)
 
 It is the function that initializes the **ArrayList**. By setting all components of arr[LIST_LEN] as -1, the arr has all default values.
 <br/>
+<br/>
 
 #### 2. LInsert
 
 ![LInsert](./image/LInsert.png)
 It is the function that inserts the new data next to the last input data(not '-1') in ArrayList.
 <br/>
+<br/>
 
 #### 3. ListPrint
 
 It is the function that prints the components of ArrayList by linear order.
+<br/>
 <br/>
 
 #### 4. LRemove
@@ -59,10 +62,12 @@ It is the function that prints the components of ArrayList by linear order.
 ![LRemove](./image/LRemove.png)
 It is the function that removes the selected component in ArrayList. After the selected data is removed, other datas which are behind the selected one are moved to the left by one index.
 <br/>
+<br/>
 
 #### 5. LCount
 
 It is the function that returns the number of Data which is same as **numofData** in ArrayList.
+<br/>
 <br/>
 
 #### 6. LSearch
