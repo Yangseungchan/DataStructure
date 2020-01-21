@@ -15,7 +15,6 @@ The Composition of the **ArrayList** as follows.
 graph LR
 A[ArrayList] --> B["arr[LIST_LEN]"]
 A --> C(numofdata)
-A --> D(curPosition)
 ```
 
 <br/>
