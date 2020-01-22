@@ -4,34 +4,38 @@
 #define TRUE 1
 #define FALSE 0
 
-typedef struct __node
-{ /* structure of the node */
+typedef struct __node /* structure of the node */
+{
     int data;
     struct __node *next;
 } Node;
 
-typedef struct __linkedlist
-{ /* structure of the LilnkedList */
-    Node *head;
-    Node *tail;
-    int count;
-
+typedef struct __linkedlist /* structure of the LilnkedList */
+{
+    Node *head; /* node that points the head of linkedlist */
+    Node *curt; /* node that points the current node of linkedlist; it is renewed consistently by insert and removal */
 } LinkedList;
 
-typedef LinkedList LList; /* rename the LinkedList as List */
+typedef LinkedList Llist; /* rename the LinkedList as List */
 
-Node *InitNode(); /* function that initializes the Node */
+void InitList(Llist *list); /* function that initializes the linkedlist */
 
-void InitList(LList *llist); /* function that initializes the List */
+Node *SetNode(const int data, Node *next); /* function that allocates and makes new node and points to next node */
 
-int InsertData(LList *llist, int data); /* function that inserts a new data */
+void InsertFront(Llist *list, const int data); /* function that insert the new node at head of linkedlist */
 
-int DeleteData(LList *llist, int data); /* function that deletes the selected component in list */
+void InsertRear(Llist *list, const int data); /* function that inserts the new node at tail of linkedlist */
 
-int SearchData(LList *llist, int data); /* function that finds the data whether it is in list */
+int RemoveFront(Llist *list); /* function that removes a node at head of linkedlist */
 
-int ListCount(LList *llist); /* function that returns the number of data in list */
+int RemoveRear(Llist *list); /* function that removes a node at tail of linkedlist */
 
-void PrintList(LList *llist); /* function that prints the whole datas of the list */
+int RemoveCur(Llist *list); /* function that removes a node that Node curt points */
+
+int Search(Llist *list, const int data); /* function that finds a node which data is same as the input data by using function compare*/
+
+void Clear(Llist *list); /* function that deletes all nodes */
+
+void PrintList(const Llist *list); /* function that prints the whole datas of the linkedlist */
 
 #endif

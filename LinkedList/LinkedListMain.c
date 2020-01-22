@@ -1,59 +1,111 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "LinkedList.h"
 
-int main(void)
+typedef enum
 {
+    INS_FRONT,
+    INS_REAR,
+    RMV_FRONT,
+    RMV_REAR,
+    RMV_CRNT,
+    SRCH_NODE,
+    PRINT_ALL,
+    CLEAR,
+    TERMINATE
+} Menu;
 
-    int cmd;
-    int num, result;
-    LList list;
-    InitList(&list);
+/*--- ∏ﬁ¥∫ º±≈√ ---*/
+Menu SelectMenu(void)
+{
+    int i, ch;
+    char *mstring[] = {
+        "INSERT NODE AT FRONT",
+        "INSERT NODE AT REAR",
+        "REMOVE NODE AT FRONT",
+        "REMOVE NODE AT REAR",
+        "REMOVE NODE AT CURT",
+        "SEARCH NODE IN LIST",
+        "PRINT ALL NODES IN LIST",
+        "CLEAR ALL NODES IN LIST",
+        "TERMINATE PROGRAM"};
 
     do
     {
-        printf("Input the cmd that you want to execute (1 = INSERT, 2 = DELETE, 3 = PRINT, 4 = # of Data, 5 = SEARCH, 6 = EXIT) : ");
-        scanf("%d", &cmd);
-        switch (cmd)
+        for (i = INS_FRONT; i < TERMINATE; i++)
         {
-        case 1:
-            printf("Input the data that you want to insert : ");
-            scanf("%d", &num);
-            result = InsertData(&list, num);
+            printf("(%d) %-24.24s ", i + 1, mstring[i]);
+            if ((i % 3) == 2)
+                putchar('\n');
+        }
+        printf("(9) TERMINATE\n");
+        scanf("%d", &ch);
+    } while (ch > TERMINATE || ch < INS_FRONT);
+
+    return (Menu)ch;
+}
+
+int main(void)
+{
+    Menu menu;
+    Llist list;
+    int num;
+
+    InitList(&list);
+    menu = SelectMenu();
+    do
+    {
+        switch (menu = SelectMenu())
+        {
+        case INS_FRONT:
+            printf("Input number to insert : ");
+            num = scanf("%d", &num);
+            InsertFront(&list, num);
             break;
-        case 2:
-            printf("Input the data that you want to delete : ");
-            scanf("%d", &num);
-            result = DeleteData(&list, num);
-            if (result == FALSE)
+
+        case INS_REAR:
+            printf("Input number to insert : ");
+            num = scanf("%d", &num);
+            InsertRear(&list, num);
+            break;
+
+        case RMV_FRONT:
+            RemoveFront(&list);
+            break;
+
+        case RMV_REAR:
+            RemoveRear(&list);
+            break;
+
+        case RMV_CRNT:
+            RemoveCur(&list);
+            break;
+
+        case SRCH_NODE:
+            printf("Input number to search : ");
+            num = scanf("%d", &num);
+            if (Search(&list, num) == TRUE)
             {
-                printf("# FAILURE TO DELETE DATA; No Data to Delete #\n");
-            }
-            break;
-        case 3:
-            PrintList(&list);
-            break;
-        case 4:
-            printf("Num of Data : %d\n", ListCount(&list));
-        case 5:
-            printf("Input the data that you want to search : ");
-            scanf("%d", &num);
-            result = SearchData(&list, num);
-            if (result == TRUE)
-            {
-                printf("The data that you input exists at this LinkedList\n");
+                puts("It exists in LinkedList\n\n");
             }
             else
             {
-                printf("FAILURE TO FIND IT.\n");
+                puts("It doesn't exist in LinkedList\n\n");
             }
-        case 6:
             break;
+
+        case PRINT_ALL:
+            PrintList(&list);
+            break;
+
+        case CLEAR:
+            Clear(&list);
+            break;
+
         default:
-            printf("Wrong cmd input; Try Again\n");
             break;
         }
-    } while (cmd != 6);
+
+    } while (menu != TERMINATE);
 
     return 0;
 }
