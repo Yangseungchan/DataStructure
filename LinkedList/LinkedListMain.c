@@ -3,6 +3,7 @@
 
 typedef enum
 {
+    DEFAULT,
     INS_FRONT,
     INS_REAR,
     RMV_FRONT,
@@ -14,7 +15,6 @@ typedef enum
     TERMINATE
 } Menu;
 
-/*--- ∏ﬁ¥∫ º±≈√ ---*/
 Menu SelectMenu(void)
 {
     int i, ch;
@@ -33,11 +33,12 @@ Menu SelectMenu(void)
     {
         for (i = INS_FRONT; i < TERMINATE; i++)
         {
-            printf("(%d) %-24.24s ", i + 1, mstring[i]);
-            if ((i % 3) == 2)
+            printf("(%d) %-24.24s ", i, mstring[i-1]);
+            if (((i-1) % 3) == 2)
                 putchar('\n');
         }
         printf("(9) TERMINATE\n");
+        printf("MENU : ");
         scanf("%d", &ch);
     } while (ch > TERMINATE || ch < INS_FRONT);
 
@@ -51,20 +52,19 @@ int main(void)
     int num;
 
     InitList(&list);
-    menu = SelectMenu();
     do
     {
         switch (menu = SelectMenu())
         {
         case INS_FRONT:
             printf("Input number to insert : ");
-            num = scanf("%d", &num);
+            scanf("%d", &num);
             InsertFront(&list, num);
             break;
 
         case INS_REAR:
             printf("Input number to insert : ");
-            num = scanf("%d", &num);
+            scanf("%d", &num);
             InsertRear(&list, num);
             break;
 
@@ -101,7 +101,8 @@ int main(void)
             Clear(&list);
             break;
 
-        default:
+        case TERMINATE:
+            Clear(&list);
             break;
         }
 
