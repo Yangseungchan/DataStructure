@@ -2,13 +2,7 @@
 
 ## (1) Initialization
 
-1. Deleting previous account information
-
-     $ git config --global user.email --unset credential.helper
-
-     $ git config --global user.name --unset credential.helper
-
-2. Inputing email and name information for initialization
+1. Inputing email and name information for initialization
     
      $ git config --global user.email --"input@your.mail"
 
@@ -24,7 +18,7 @@
 
     * Erasing all previously enrolled name and replacing them with new name which you input at this command.)
 
-3.  Make your directory for using at your own repository. (Using cmd such as "mkdir", "cd")
+2.  Make your directory for using at your own repository. (Using cmd such as "mkdir", "cd")
 
     Let's assume that your directory name is "example" Then,
 
@@ -34,7 +28,7 @@
     
     * You can check your current directory by using cmd "pwd"
 
-4. Start of git
+3. Start of git
 
      $ git init 
     
