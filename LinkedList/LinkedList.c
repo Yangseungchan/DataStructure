@@ -104,7 +104,7 @@ int RemoveCur(Llist *list) /* function that removes a node that Node curt points
         else
         {
             Node *before = list->head;
-            while (before->next == list->curt)
+            while (before->next != list->curt)
             {
                 before = before->next;
             }
@@ -146,6 +146,10 @@ void Clear(Llist *list) /* function that deletes all nodes */
 void PrintList(const Llist *list) /* function that prints the whole datas of the linkedlist */
 {
     Node *nde = list->head;
+    if(nde == NULL){
+        printf("Empty List\n");
+        return;
+    }
     while (nde != NULL)
     {
         printf("%d ->", nde->data);
