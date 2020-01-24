@@ -66,7 +66,8 @@ It is the function that **inserts the new node** at the **LinkedList head**.  Th
 
 4. And the Node type pointer curt also points the Node that is pointed by **ptr**(= **newly made node** = **new LinkedList head**).
 <br/>
-![InsertFront_1](./image/InsertFront_2.png)
+
+![InsertFront_2](./image/InsertFront_2.png)
 
 <br/>
 <br/>
@@ -82,6 +83,7 @@ It is the function that **inserts** the new Node at the **end** of the LinkedLis
 
 2.  If there is any node in LinkedList, then make new node and let it pointed by Node type pointer **ptr** like InsertFront.
 <br/>
+
 3. And LinkedList's **head node** should be pointed by Node type pointer **prev** to find the position of the inserted node.
 
 <br/>
@@ -95,8 +97,9 @@ It is the function that **inserts** the new Node at the **end** of the LinkedLis
 4. Pointer **prev** is moved to right until it reaches before the **end of the LinkList** which means the node's next pointer is **NULL**.
 
 5. After it finds the position, **prev's next pointer(=prev->next)** should point to the **new node(=ptr)**.
-6. And also the **Llist's curt(=list->curt)** pointer should be pointing to  the **new node(=ptr)**.
+<br/>
 
+6. And also the **Llist's curt(=list->curt)** pointer should be pointing to  the **new node(=ptr)**.
 <br/>
 <br/>
 
