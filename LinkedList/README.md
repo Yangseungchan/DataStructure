@@ -79,6 +79,8 @@ It is the function that **inserts** the new Node at the **end** of the LinkedLis
 1. At first, it checks whether there is at least one node in the LinkedList. If there isn't any nodes, it calls function **InsertFront** instead.
 
 > **Q : Why does it call InsertFront instead?**
+<br/>
+
 > A : When  there is no node in LinkedList, its result is same as calling InsertFront. And also InsertFront is much easier and cheaper in cost than InsertRear, as InsertRear requires at least 2 Node type Pointers.
 
 2.  If there is any node in LinkedList, then make new node and let it pointed by Node type pointer **ptr** like InsertFront.
@@ -143,6 +145,8 @@ It is the function that **remove** **the last node of the LinkedList**. The proc
 <br/>
 
 > **Q : How can I check whether the LinkedList has only  one node?**
+<br/>
+
 > A : It can  be checked by verify whether head node's  next node(list->head->next) is NULL.  Because this case is **only possible when it has only one node!**
 >
 >
