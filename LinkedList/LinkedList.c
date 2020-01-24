@@ -55,6 +55,7 @@ int RemoveFront(Llist *list) /* function that removes a node at head of linkedli
     {
         Node *ptr = list->head;
         list->head = list->head->next;
+        ptr->next = NULL; /* to disconnect with next node */
         free(ptr);
         return TRUE;
     }
