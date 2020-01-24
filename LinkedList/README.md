@@ -4,7 +4,7 @@
 ## 1. Introuction
 It is called as **LinkedList** as it uses the **Node** structure that points to the **next Node**.
 <br/>
-
+<br/>
 ## 2. ADT(Abstract Data Type)
 
  The Composition of the **LinkedList** is as follows.
@@ -16,8 +16,10 @@ It is called as **LinkedList** as it uses the **Node** structure that points to 
 
 - **Node** : It's the node structure that contains the **integer type data** and **Node type pointer** which points **the next node** for **linking**.
 <br/>
+
 - **head** : It is a Node type pointer that points  the **leftmost node** in linkedlist. As it is used as a start node in LinkedList, it is called **head**.
 <br/>
+
 - **curt** : It is a Node type pointer that points the **currently used node** in linkedlist. The curt node is consistently renewed whenever the linkedlist performs **Insert** or **Delete**.
 
 <br/>
@@ -38,11 +40,13 @@ Those functions are written for the functionality of the **LinkedList** such as 
 
 It is the function that initializes the **LinkedList**.  By setting **head** and **curt** as **NULL** which means those two pointers are not pointing anything.
 <br/>
+<br/>
 
 ### 2. Node *SetNode(const int data, Node *next)
 ![LinkedList](https://i.imgur.com/6613b8b.png)
 
 It is the function that **allocates** and **returns** the node which got data as **input data** and points the **input next node**.
+<br/>
 <br/>
 
 ### 3. void InsertFront(Llist *list, const int data)
@@ -50,13 +54,18 @@ It is the function that **inserts the new node** at the **LinkedList head**.  Th
 
 1. It allocates the new node and newly made node's **next node pointer** points the **head of LinkedList** by setting the input next pointer of SetNode as **head of LinkedList**.
 
-2. This new made Node is pointed by Node type pointer **ptr**.<br/>
+2. This new made Node is pointed by Node type pointer **ptr**.
+<br/>
+
 ![InsertFront_1](https://i.imgur.com/1ODLrZy.png)
+
 <br/>
 3. This new made Node( = **Node that is pointed by ptr**) is pointed by head of LinkedList to be positioned at the head of the LinkedList.
- 4. And the Node type pointer curt also points the Node that is pointed by **ptr**(= **newly made node** = **new LinkedList head**).<br/>
+4. And the Node type pointer curt also points the Node that is pointed by **ptr**(= **newly made node** = **new LinkedList head**).
+<br/>
 ![InsertFront_1](https://i.imgur.com/XUVBMEg.png)
 
+<br/>
 <br/>
 
 ### 4. void InsertRear(Llist *list, const int data)
@@ -70,6 +79,7 @@ It is the function that **inserts** the new Node at the **end** of the LinkedLis
 2.  If there is any node in LinkedList, then make new node and let it pointed by Node type pointer **ptr** like InsertFront.
 <br/>
 3. And LinkedList's **head node** should be pointed by Node type pointer **prev** to find the position of the inserted node.
+
 ![InsertRear-1](https://i.imgur.com/330yazW.png)
 
 <br/>
@@ -96,6 +106,7 @@ It is the function that **removes** the **front node** in the LinkedList. The pr
 
 ![RemoveFront-1](https://i.imgur.com/gB3aE1n.png)
 <br/>
+<br/>
 
 ### 6. int RemoveRear(Llist *list)
 It is the function that **remove** **the last node of the LinkedList**. The processes of the function is as follows.
@@ -106,14 +117,22 @@ It is the function that **remove** **the last node of the LinkedList**. The proc
 > **Q : How can I check whether the LinkedList has only  one node?**
 > A : It can  be checked by verify whether head node's  next node(list->head->next) is NULL.  Because this case is **only possible when it has only one node!**
 >
+>
 > ![Onlyonenode](https://i.imgur.com/jJXb2Rl.png)
 <br/>
+<br/>
+
 3. If it is confirmed that LinkedList has **at least two nodes**, Two Node type pointer(**del & before**) is needed. Pointer **del** which will points to the node to be deleted points to the **next node of the list head(list->head->next)**.  And pointer **before** which will points to the node left to the del node points to the **head node of the LinkedList(list->head)**.
 <br/>
+<br/>
+
 4. **del node** and **before** is **moved to the right** until it finds the **end of the node**. It can be checked by setting condition, ***del->next == NULL***.
 <br/>
+
 ![RemoveRear-1](https://i.imgur.com/91QP0I2.png)
 <br/>
+<br/>
+
 5. If it reaches the **end of the node**, next node of before is disconnected and **del node** is free by using function **free()**.
 <br/>
 6. At last, **curt node** of the LinkedList is pointed to the **before node** .
