@@ -137,7 +137,7 @@ void Clear(Llist *list) /* function that deletes all nodes */
     Node *ptr = list->head;
     while (ptr != NULL)
     {
-        RemoveFront(list); 
+        RemoveFront(list);
         ptr = list->head; /* After removal is done, renew the ptr as head node of linkedlist */
     }
     return;

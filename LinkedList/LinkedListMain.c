@@ -82,7 +82,7 @@ int main(void)
 
         case SRCH_NODE:
             printf("Input number to search : ");
-            num = scanf("%d", &num);
+            scanf("%d", &num);
             if (Search(&list, num) == TRUE)
             {
                 puts("It exists in LinkedList\n\n");
