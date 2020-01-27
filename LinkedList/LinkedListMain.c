@@ -33,8 +33,8 @@ Menu SelectMenu(void)
     {
         for (i = INS_FRONT; i < TERMINATE; i++)
         {
-            printf("(%d) %-24.24s ", i, mstring[i-1]);
-            if (((i-1) % 3) == 2)
+            printf("(%d) %-24.24s ", i, mstring[i - 1]);
+            if (((i - 1) % 3) == 2)
                 putchar('\n');
         }
         printf("(9) TERMINATE\n");
@@ -60,24 +60,29 @@ int main(void)
             printf("Input number to insert : ");
             scanf("%d", &num);
             InsertFront(&list, num);
+            putchar('\n');
             break;
 
         case INS_REAR:
             printf("Input number to insert : ");
             scanf("%d", &num);
             InsertRear(&list, num);
+            putchar('\n');
             break;
 
         case RMV_FRONT:
             RemoveFront(&list);
+            putchar('\n');
             break;
 
         case RMV_REAR:
             RemoveRear(&list);
+            putchar('\n');
             break;
 
         case RMV_CRNT:
             RemoveCur(&list);
+            putchar('\n');
             break;
 
         case SRCH_NODE:
@@ -99,10 +104,12 @@ int main(void)
 
         case CLEAR:
             Clear(&list);
+            putchar('\n');
             break;
 
         case TERMINATE:
             Clear(&list);
+            putchar('\n');
             break;
         }
 
