@@ -8,4 +8,6 @@
 
     (2) LinkedList - List based on Node which has pointer that points next node.
 
+    (3) CursorList - List which is physically based on Array that shows logical LinkedList
+
     ...
