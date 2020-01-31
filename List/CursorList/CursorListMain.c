@@ -97,7 +97,6 @@ int main(void)
                 printf("Fail to delete data(It doesn't exist in CursorList)\n");
             }
             putchar('\n');
-            putchar('\n');
             break;
 
         case SRCH_NODE:
