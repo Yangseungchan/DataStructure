@@ -23,7 +23,7 @@ typedef struct __cursorlist
     Index deleted; /* Index that points the head of the freelist */
 } CursorList;
 
-typedef CursorList CList;
+typedef CursorList CList; /* rename CursorList as CList */
 
 void Initialize(CList *Clist); /* function that initializes the cursorlist */
 
