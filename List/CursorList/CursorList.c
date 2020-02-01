@@ -26,20 +26,6 @@ void SetNode(Node *nde, const char *data, Index next)
     nde->Dnext = EMPTY;      /* set the nde's Dnext index as EMPTY(because setNode is one of the insert processes!) */
 }
 
-int GetIndex(CList *Clist) /* function that finds the appropriate index to put data in array */
-{
-    if (Clist->deleted != EMPTY) /* if deleted has any value */
-    {
-        int temp = Clist->deleted;               /* save deleted index */
-        Clist->deleted = Clist->nrr[temp].Dnext; /* renew deleted index */
-        return temp;                             /* return saved deleted index */
-    }
-    else /* if deleted has no value */
-    {
-        return (++Clist->max); /* return max index after adding 1 */
-    }
-}
-
 void InsertFront(CList *Clist, const char *data) /* function that inserts the input data into front node */
 {
     int index = GetIndex(Clist);                      /* get appropriate index from function getindex */
