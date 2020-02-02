@@ -49,7 +49,7 @@ As you can see, **previous tail node** D's next value is changed to **index 6 fr
 
 However, this simple **CursorList** has fatal problem. When you try to delete node in CursorList, this causes waste of space in array.
 
-![CursorList_Intro_2](./)
+![CursorList_Intro_2](./image/CursorList_Intro_2.png)
 
 As you can see in above this figure, when you delete node D, then it causes the empty space in array(red one). Considering the limited space of array, this structure will waste a lot of spaces and it causes fatal problems.
 For this reason, **FreeList** should be introduced to **CursorList**
@@ -212,7 +212,7 @@ It is the function that inserts the new node into **head of the CursorList**.
 2. Then function **SetNode** sets data as **input string** and index next as **head index** of the **CursorList**.
    <br/>
 
-![CursorList_InsertFront_2](./image/CursorList_InsertFront_2.png)
+![CursorList_InsertFront_2](./image/CursorList_IndexFront_2.png)
 
 3. After that, index **head** and **curt**(orange ones) is renewed as **inserted index**.
 
@@ -237,12 +237,12 @@ It is the function that inserts new nodes into **tail node of the CursorList**.
 2. If not so, like InsertFront, it gets **appropriate index(green)** to be inserted from **GetIndex**.
    <br/>
 
-![CursorList_InsertRear_1](./image/CursorList_InsertRear_1.png)
+![CursorList_InsertRear_1](./image/CursorList_IndexRear_1.png)
 
 3. Then it finds the **index of the last node(orange)** of the CursorList by **tracking next index**.
    <br/>
 
-![CursorList_InsertRear_2](./image/CursorList_InsertRear_2.png)
+![CursorList_InsertRear_2](./image/CursorList_IndexRear_2.png)
 
 4. By using function **SetNode**, it sets the new node's data, next and Dnext.
 
