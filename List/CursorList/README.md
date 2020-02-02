@@ -2,9 +2,10 @@
 
 # 1. Introduction
 
-## A. Is 'LinkedList' complete Datastructure?
+## A. Is LinkedList complete Datastructure?
 
 I introduced you the **LinkedList** previously. However, **LinkedList** has one somehow dissatisfying defect.
+
 <br/>
 
 > Whenever **LinkedList** tries to insert or delete data, it requires **dynamic allocation** or **releasing allocated data**. Its cost is too expensive.
@@ -20,17 +21,27 @@ In order to overcome this defect, the **CursorList** is gonna be introduced.
 **CursorList** is same as **LinkedList** in logical features. However, CursorList is physically composed of **Array**.
 
 ![CursorList_Intro_1](https://i.imgur.com/UkgVJYK.png#.XjUBF0sBvXw.link)
+
 <br/>
 
-As you can see in above figure, the upper part is common **LinkedList**, this LinkedList can be interpreted as the lower part(**physical Array**). As the next array is called **cursor** which points the next component's index, this structure is called **CursorList**.
+As you can see in above figure, the upper part is common **LinkedList**. This **LinkedList** can be interpreted as the lower part(**physical Array**). As the next array is called **cursor** which points the next component's index, this structure is called **CursorList**.
+
 <br/>
+
 Then, how **Insertion** can be done on **CursorList**?
 Let's assume Node 'E' is inserted next to D and inserted into index 6 in array.
+
 <br/>
 
 ![CursorList_Intro_1_1](https://i.imgur.com/5DO9ecW.png#.XjUdrjQfelQ.link)
+
 <br/>
-The new inserted node(blue node) is inserted next to node 'D' and inserted at **index 6** in array. As you can see, **previous tail node** D's next value is changed to **index 6 from -1** as it is **no more end of the CursorList**. And because node E is the end of the logical linkedlist, **next index** of node E is **-1**.
+
+The new inserted node(blue node) is inserted next to node 'D' and inserted at **index 6** in array. 
+
+<br/>
+
+As you can see, **previous tail node** D's next value is changed to **index 6 from -1** as it is **no more end of the CursorList**. And because node E is the end of the logical linkedlist, **next index** of node E is **-1**.
 
 <br/>
 
@@ -57,12 +68,15 @@ However, **FreeList** doesn't exist as **physical List**. It is just logically i
 <br/>
 
 By recording the deleted nodes' indexes, it can **save empty space** when you **insert and delete data** of **CursorList**.
+
 <br/>
 <br/>
 
 # 2. ADT(Abstract Data Type)
 
 > For classification, data type int is renamed by typedef as **Index**.
+
+<br/>
 
 ## 1. ADT of Node
 
@@ -110,8 +124,10 @@ K --> Y(Index that points the head nodes in freelist)
 
 # 3. Functions
 
-> As you can see at headerfile **CursorList.h**, constant **END** is defined as **-1** which means that it is the end of the List.
-> <br/>
+- As you can see at headerfile **CursorList.h**, constant **END** is defined as **-1** which means that it is the end of the List.
+
+<br/>
+
 > And also constant **EMPTY** is defined as **-2** which means that it is empty without valid value or index.
 
 <br/>
@@ -131,6 +147,7 @@ It is the function that initializes the **componenets of CursorLists**.
 ## 2. void InitNodearr(Node \*n)
 
 While going around all nodes in Node type array **nrr**, each node's _Index_ **next** and **Dnext** are initialized EMPTY to be distinct from **END** when it means the end of the **CursorList** or **FreeList**.
+
 <br/>
 
 ## 3. int GetIndex(CList \*Clist)
@@ -168,13 +185,13 @@ It is function that returns the appropriate index to be inserted. It is divided 
 ![CursorList_GetIndex_3](https://i.imgur.com/96WFcQy.png)
 
 2. After that, it returns added **max**
-   <br/>
+
    <br/>
 
 ## 4. void SetNode(Node *nde, const char *data, Index next)
 
 It is the function that copies the data into new node's data and allocates next and **Dnext** index. As the node **nde** is newly inserted node, its **Dnex**t index is empty.
-<br/>
+
 <br/>
 
 ## 5. void InsertFront(CList *Clist, const char *data)
@@ -197,7 +214,11 @@ It is the function that inserts the new node into **head of the CursorList**.
 
 3. After that, index **head** and **curt**(orange ones) is renewed as **inserted index**.
 
-> As you can see according to the **change of the array**, **logical LinkedList** is also changed.
+<br/>
+
+> As you can see, according to the **change of the array**, **logical LinkedList** is also changed.
+
+<br/>
 
 ## 6. void InsertRear(CList *Clist, const char *data)
 
@@ -237,6 +258,8 @@ Let's suppose that deleted target is **Node D** then the **red ones** are things
 
 Whenever **DeleteFront, DeleteRear and DeleteCurt** is called, **DeleteIndex** is called.
 
+<br/>
+
 ## 8. int DeleteFront(CList \*Clist);
 
 It is the function that deletes the front node in the **CursorList.**
@@ -252,6 +275,8 @@ It is the function that deletes the front node in the **CursorList.**
 ![CursorList_DeleteFront_2](https://i.imgur.com/3Ud5wKt.png)
 
 4. Then by function **DeleteIndex**, **deleted index** and **Dnext of deleted node** is adjusted and **data with next index** is cleared.
+
+<br/>
 
 ## 9. int DeleteRear(CList \*Clist);
 
@@ -277,6 +302,8 @@ It is the function that deletes the tail node in the **cursorlist**.
 
 6. By calling function **Deleteindex**, tail node's **data, Dnext** and CursorList's **Deleted index** are cleared or adjusted.
 
+<br/>
+
 ## 10. int DeleteCurt(CList \*Clist);
 
 It is the function that deletes the curt node.
@@ -292,8 +319,6 @@ It is the function that deletes the curt node.
 > **(After 4, 5, 6)**
 > ![CursorList_DeleteCurt_2](https://i.imgur.com/uiynS9O.png#.XjY7fG8FyMw.link)
 
-<br/>
-
 4. Else, it finds the node which is **left to the curt node.** (I'll call this node as **prev** node.)
 
 5. Then, the **next index** of **prev** node is changed to **curt node's next node** index to be disconnected with curt node.
@@ -302,9 +327,14 @@ It is the function that deletes the curt node.
 
 7. At last, **curt index** is changed to current **prev** node index.
 
+<br/>
+<br/>
+
 ## 11. int Search(CList *Clist, char *data);
 
 It is the function that finds the node which is same as input data. Its searching algorithm is just **Linear Search**.
+
+<br/>
 
 ## 12. void PrintCurt(CList \*Clist);
 
@@ -322,6 +352,10 @@ It is the function that prints all of the nodes in the CursorList. Starting from
 
 It is the function that **clears all nodes in the CursorList**. As function **DeleteFront** is the simplest among Deleting functions, it deletes all nodes by using **DeleteFront**. Until **head node's** index is **END(-1)**, it deletes front nodes.
 
+<br/>
+<br/>
+
+
 # 4. Conclusion
 
 ## 4-1. Pros
@@ -336,6 +370,8 @@ It is the function that **clears all nodes in the CursorList**. As function **De
   <br/>
 
 - In order to reach the **end of the CursorList(= tail node)**, it takes too much time or costs.
+
+<br/>
 
 ## 4-3 How can overcome the difficulty to reach tail node?
 
