@@ -49,7 +49,7 @@ As you can see, **previous tail node** D's next value is changed to **index 6 fr
 
 However, this simple **CursorList** has fatal problem. When you try to delete node in CursorList, this causes waste of space in array.
 
-![CursorList_Intro_2](./image/CursorList_Intro_2.png)
+![CursorList_Intro_2](./)
 
 As you can see in above this figure, when you delete node D, then it causes the empty space in array(red one). Considering the limited space of array, this structure will waste a lot of spaces and it causes fatal problems.
 For this reason, **FreeList** should be introduced to **CursorList**
