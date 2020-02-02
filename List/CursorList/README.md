@@ -20,7 +20,7 @@ In order to overcome this defect, the **CursorList** is gonna be introduced.
 
 **CursorList** is same as **LinkedList** in logical features. However, CursorList is physically composed of **Array**.
 
-![CursorList_Intro_1](https://i.imgur.com/UkgVJYK.png#.XjUBF0sBvXw.link)
+![CursorList_Intro_1](./image/CursorList_Intro_1.png)
 
 <br/>
 
@@ -33,7 +33,7 @@ Let's assume Node 'E' is inserted next to D and inserted into index 6 in array.
 
 <br/>
 
-![CursorList_Intro_1_1](https://i.imgur.com/5DO9ecW.png#.XjUdrjQfelQ.link)
+![CursorList_Intro_1_1](./image/CursorList_Intro_1_1.png)
 
 <br/>
 
@@ -49,7 +49,7 @@ As you can see, **previous tail node** D's next value is changed to **index 6 fr
 
 However, this simple **CursorList** has fatal problem. When you try to delete node in CursorList, this causes waste of space in array.
 
-![CursorList_Intro_2](https://i.imgur.com/NO1tmHR.png#.XjUDumgTdKM.link)
+![CursorList_Intro_2](./image/CursorList_Intro_2.png)
 
 As you can see in above this figure, when you delete node D, then it causes the empty space in array(red one). Considering the limited space of array, this structure will waste a lot of spaces and it causes fatal problems.
 For this reason, **FreeList** should be introduced to **CursorList**
@@ -60,7 +60,7 @@ For this reason, **FreeList** should be introduced to **CursorList**
 
 **FreeList** is the list that shows the freed(deleted) node's record. Let assume that index 0, 2, 4 is deleted node in **Array** and **LinkedList**.
 
-![CursorList_Intro_3](https://i.imgur.com/2vRFuBE.png#.XjUJn8ZSmZQ.link)
+![CursorList_Intro_3](./image/CursorList_Intro_3.png)
 
 As you can see this above figure, FreeList shows the records of deleted nodes' indexes.
 However, **FreeList** doesn't exist as **physical List**. It is just logically interpreted as LinkedList and is realized by integer variable **deleted** and integer type variable **Dnext**. The variable **deleted** means **the index of head node of the FreeList** and **Dnext** shows the **next deleted node's index**.
@@ -144,6 +144,8 @@ It is the function that initializes the **componenets of CursorLists**.
 
 - Node type array **nrr** is allocated **MAX(defined as 500)** Nodes by function calloc. Its components are initialized by next function **InitNodearr**.
 
+<br/>
+
 ## 2. void InitNodearr(Node \*n)
 
 While going around all nodes in Node type array **nrr**, each node's _Index_ **next** and **Dnext** are initialized EMPTY to be distinct from **END** when it means the end of the **CursorList** or **FreeList**.
@@ -158,13 +160,13 @@ It is function that returns the appropriate index to be inserted. It is divided 
 
  <br/>
  
-![CursorList_GetIndex_1](https://i.imgur.com/uIsjz1N.png#.XjUs-2TC8vU.link)
+![CursorList_GetIndex_1](./image/CursorList_GetIndex_1.png)
 
 1. The **deleted index(green)** is saved by other variable.
    <br/>
    <br/>
 
-![CursorList_GetIndex_2](https://i.imgur.com/UfADhha.png)
+![CursorList_GetIndex_2](./image/CursorList_GetIndex_2.png)
 
 2. The **deleted index** is renewed as index **Dnext of node(blue)** which is pointed by **deleted index**.
 
@@ -176,13 +178,13 @@ It is function that returns the appropriate index to be inserted. It is divided 
 
 <br/>
 
-![CursorList_GetIndex_2](https://i.imgur.com/eN9DZ1x.png)
+![CursorList_GetIndex_2](./image/CursorList_GetIndex_2.png)
 
 1. If deleted **EMPTY(-2)** which means **FreeList** is empty, then it adds 1 to index **max**.
    <br/>
    <br/>
 
-![CursorList_GetIndex_3](https://i.imgur.com/96WFcQy.png)
+![CursorList_GetIndex_3](./image/CursorList_GetIndex_3.png)
 
 2. After that, it returns added **max**
 
@@ -190,7 +192,7 @@ It is function that returns the appropriate index to be inserted. It is divided 
 
 ## 4. void SetNode(Node *nde, const char *data, Index next)
 
-It is the function that copies the data into new node's data and allocates next and **Dnext** index. As the node **nde** is newly inserted node, its **Dnex**t index is empty.
+It is the function that copies the data into new node's data and allocates next and **Dnext** index. As the node **nde** is newly inserted node, its **Dnext** index is empty.
 
 <br/>
 
@@ -200,17 +202,17 @@ It is the function that copies the data into new node's data and allocates next 
 
 It is the function that inserts the new node into **head of the CursorList**.
 
-![CursorList_GetIndex_2](https://i.imgur.com/UfADhha.png)
+![CursorList_GetIndex_2](./image/CursorList_GetIndex_2.png)
 
 1. It gets **appropriate index(green)** to insert and deleted is renewed by function **GetIndex**.
 
-![CursorList_InsertFront_1](https://i.imgur.com/mW7qHZS.png)
+![CursorList_InsertFront_1](./image/CursorList_InsertFront_1.png)
 <br/>
 
 2. Then function **SetNode** sets data as **input string** and index next as **head index** of the **CursorList**.
    <br/>
 
-![CursorList_InsertFront_2](https://i.imgur.com/G0IjRbE.png)
+![CursorList_InsertFront_2](./image/CursorList_InsertFront_2.png)
 
 3. After that, index **head** and **curt**(orange ones) is renewed as **inserted index**.
 
@@ -230,17 +232,17 @@ It is the function that inserts new nodes into **tail node of the CursorList**.
 
 <br/>
 
-![CursorList_GetIndex_2](https://i.imgur.com/UfADhha.png)
+![CursorList_GetIndex_2](./image/CursorList_GetIndex_2.png)
 
 2. If not so, like InsertFront, it gets **appropriate index(green)** to be inserted from **GetIndex**.
    <br/>
 
-![CursorList_InsertRear_1](https://i.imgur.com/4U1dUbP.png)
+![CursorList_InsertRear_1](./image/CursorList_InsertRear_1.png)
 
 3. Then it finds the **index of the last node(orange)** of the CursorList by **tracking next index**.
    <br/>
 
-![CursorList_InsertRear_2](https://i.imgur.com/0dhPG1k.png)
+![CursorList_InsertRear_2](./image/CursorList_InsertRear_2.png)
 
 4. By using function **SetNode**, it sets the new node's data, next and Dnext.
 
@@ -252,7 +254,7 @@ It is the function that inserts new nodes into **tail node of the CursorList**.
 
 It is the function that **1. deletes the data** and **2. adjusts the next, Dnext** and **3. adjusts the index deleted** based on input index which is the index of node to be deleted.
 
-![CursorList_DeleteIndex_1](https://i.imgur.com/DE6XklJ.png)
+![CursorList_DeleteIndex_1](./image/CursorList_DeleteIndex_1.png)
 
 Let's suppose that deleted target is **Node D** then the **red ones** are things to be done by function **DeleteIndex.**
 
@@ -266,13 +268,13 @@ It is the function that deletes the front node in the **CursorList.**
 
 1. At first, it checks whether the **CursorList** is empty or not. If it is empty, then it returns -1 for indicating that it is not possible to remove something.
 
-![CursorList_DeleteFront_1](https://i.imgur.com/VmWADJ6.png)
+![CursorList_DeleteFront_1](./image/CursorList_DeleteFront_1.png)
 
 2. Else, it saves the head index of the **CursorList**.
 3. Then, **head and curt index** of CursorList is renewed to **next index of the head node**(refer to red circles).
    <br/>
 
-![CursorList_DeleteFront_2](https://i.imgur.com/3Ud5wKt.png)
+![CursorList_DeleteFront_2](./image/CursorList_DeleteFront_2.png)
 
 4. Then by function **DeleteIndex**, **deleted index** and **Dnext of deleted node** is adjusted and **data with next index** is cleared.
 
@@ -286,12 +288,12 @@ It is the function that deletes the tail node in the **cursorlist**.
 
 2. After that, it checks whether the CursorList has only one node. If so, it calls **DeleteFront**.
 
-![CursorList_DeleteRear_1](https://i.imgur.com/hHlF55z.png)
+![CursorList_DeleteRear_1](./image/CursorList_DeleteRear_1.png)
 </br>
 
 3. Else, then it finds the node which is **in front of the tail node(=target=the red ones)**.
 
-![CursorList_DeleteRear_2](https://i.imgur.com/aLSWtcK.png)
+![CursorList_DeleteRear_2](./image/CursorList_DeleteRear_2.png)
 <br/>
 
 4. The node's (which is in front of tail node) **next index** is changed to **END** for **disconnecting with tail node.**
@@ -313,11 +315,11 @@ It is the function that deletes the curt node.
 3.  Else if curt is same as tail of CursorList, then it calls **DeleteRear** instead.
 
 > **(Before)**
-> ![CursorList_DeleteCurt_1](https://i.imgur.com/o6RZde9.png#.XjY7fLp56Rk.link)
+> ![CursorList_DeleteCurt_1](./image/CursorList_DeleteCurt_1.png)
 > <br/>
 >
 > **(After 4, 5, 6)**
-> ![CursorList_DeleteCurt_2](https://i.imgur.com/uiynS9O.png#.XjY7fG8FyMw.link)
+> ![CursorList_DeleteCurt_2](./image/CursorList_DeleteCurt_2.png)
 
 4. Else, it finds the node which is **left to the curt node.** (I'll call this node as **prev** node.)
 
