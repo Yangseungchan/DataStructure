@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "DoubleCircularList.h"
+#include "CircularDoubleList.h"
 
 void Initialize(CDList *cdlist) /* It is the function that initializes the CDList */
 {
