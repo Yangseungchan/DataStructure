@@ -1,4 +1,5 @@
-> **For your convenience to watch this project, I highly recommend you to install [this](https://github.com/BackMarket/github-mermaid-extension) extension program of your browser.**
+> **For your convenience to watch this project, I highly recommend you to watch it through Google Chrome or FireFox and install [this](https://github.com/BackMarket/github-mermaid-extension) extension program of your browser which is for rendering diagrams in Markdown.**
+
 
 # DataStructure based on C
 
