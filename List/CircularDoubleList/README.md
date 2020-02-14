@@ -39,6 +39,8 @@ You can check each node's component in _Figure 1-4_.
 
 ## 1-E. Necessity of Dummy Node
 
+<br/>
+
 However, using the **CircularDoubleList** like _Figure 1-3_ can be tricky. Let's check out the insertion processes with **CircularDoubleList** like _Figure 1-3_.
 
 ![CDList_Figure1-5](./image/CDList_Figure1-5.png)
@@ -55,7 +57,10 @@ However, like _Figure 1-6_, when you try to insert new node, as there are many c
 
 ![CDList_Figure1-7](./image/CDList_Figure1-7.png)
 
-As you can see in _Figure 1-7_, **dummy node** is the node as **same form** of other node which has **no data**. Because you don't have connect head pointer with new node, you can avoid previous tricky situation by introducing **dummy node**. The detailed processes of insertion will be announced at following chapters.
+As you can see in _Figure 1-7_, **dummy node** is the node as **same form** of other node which has **no data**. Because you don't have connect head pointer with new node, you can avoid previous tricky situation by introducing **dummy node**. The details of it will be introduced in chapter 3.
+
+<br/>
+<br/>
 
 # 2. ADT(Abstract Data Type)
 
@@ -75,6 +80,7 @@ D --> G(Integer type data of Node)
 ```
 
 <br/>
+<br/>
 
 ## 2-2. ADT of CircularDoubleList
 
@@ -91,6 +97,7 @@ C --> F(Node type pointer that points previous node)
 
 > **Dummy Node** is connected to **head** and **curt** pointer when CDList is **initialized** at first.
 
+<br/>
 <br/>
 
 # 3. Principles of Connectivty of Nodes
@@ -146,9 +153,9 @@ To sum up the **chapter 3**, following two important rules are induced.
 
 <br/>
 
-**#1. Once you know where the new node to be inserted behind, whatever the position of insertion is, process of inserting a node is equivalent.**
+### Rule 1 : Once you know where the new node to be inserted behind, whatever the position of insertion is, process of inserting a node is equivalent.
 
-**#2. Connecting node to other nodes are same with connecting 4 arrows of node like _Figure 3-2-3_.**
+### Rule 2 : Connecting node to other nodes are same with connecting 4 arrows of node like _Figure 3-2-3_.
 
 <br/>
 
@@ -221,6 +228,8 @@ The two lines of codes after checking emptiness **reconnect the arrow ① and �
 
 After that, it **disconnects arrow ③ and ④** and frees the **node target** like above _Figure 4-6-3._ After doing these processes, it successfully deleted the **node target**.
 
+<br/>
+
 ## 4-7. int DeleteFront(CDList \*cdlist);
 
 It is the function that **deletes the front node of the CDList**. What you have to notice is that **deletion process is equivalent regardless of the target node's position**.
@@ -242,7 +251,7 @@ As **DeleteRear** is a function that **deletes tail node**, input target should 
 
 <br/>
   
-## 4-9.int  DeleteCurt(CDList *cdlist);
+## 4-9. int  DeleteCurt(CDList *cdlist);
   
 It is the function that **deletes the curt node of the CDList**. It is also almost same with function **DeleteFront**.
 
@@ -256,14 +265,22 @@ As **DeleteRear** is a function that **deletes curt node**, input target should 
 
 It is the function that **searches the node which is same as the input data.** It uses the **Linear Search algorithm**. When CDList is empty or it fails to find the node, it returns _FALSE._ When it succeed in searching, then it returns _TRUE_.
 
+<br/>
+
 ## 4-11. void PrintCurt(CDList \*cdlist)
 
 It is the function that prints the curt node's data in the CDList.
+
+<br/>
 
 ## 4-12. void PrintList(CDList \*cdlist)
 
 It is the function that prints the all nodes' data in the CDList.
 
+<br/>
+
 ## 4-13. void Clear(CDList \*cdlist);
 
 It is the function that **clears the CDList by clearing all nodes**. It deletes all nodes using function **Delete**. And **target input is front node of CDList.**
+
+<br/>
