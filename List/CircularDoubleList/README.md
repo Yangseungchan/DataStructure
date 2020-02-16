@@ -284,3 +284,7 @@ It is the function that prints the all nodes' data in the CDList.
 It is the function that **clears the CDList by clearing all nodes**. It deletes all nodes using function **Delete**. And **target input is front node of CDList.**
 
 <br/>
+
+# 5. Conclusion
+
+It is the combined linkedlist which is **a mixture of CircularList and DoubleList**. By making this combination, it complements **the difficulty of finding tail node in LinkedList**. However as it uses the Node type pointer and allocates Node whenever it inserts new node, **its cost can be still somehow expensive**.
