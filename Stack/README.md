@@ -18,6 +18,8 @@ What the word **Stack** means is as follows.
 
 According to the meaning of the **Stack**, data structure **Stack** is a pile of datas like _Figure 1-1_.
 
+<br/>
+
 ## 1-B Basic characteristic of Stack
 
 ![Stack_Figure1-2](./image/Stack_Figure1-2.png)
@@ -28,7 +30,11 @@ According to the meaning of the **Stack**, data structure **Stack** is a pile of
 
 > In **Stack**, inputing data is called as **Push** and taking out data is called as **Pop**.
 
+<br/>
+
 # 2. ADT(Abstract Data Type)
+
+<br/>
 
 ## 2-1. ADT of Stack
 
@@ -43,6 +49,8 @@ B --- E(int type pointer that points the int type array which contains datas.)
 C --- F(int type index that indicates the top index of the s_arr)
 D --- G(int type variabe that indicates the maximum size of array)
 ```
+
+<br/>
 
 # 3. Functions
 
