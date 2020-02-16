@@ -14,3 +14,4 @@ It is the DataStructure based on C language. Here are the contents of this proje
 |            |     CursorList     | The list which is described as linkedlist logically but is based on Array |   ★★★★☆☆   |
 |            | CircularDoubleList |       The list which is CircularLinkedList combined with DoubleList       |   ★★★★☆☆   |
 |   Stack    |       Stack        |                     The array that stacks the datas.                      |   ★☆☆☆☆☆   |
+|   Queue    |       Queue        |               The array that features FIFO using ring buffer.             |   ★★★☆☆☆   |
