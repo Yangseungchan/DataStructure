@@ -109,9 +109,13 @@ It is the function that **checks whether the Stack is full**. It checks using th
 ## 3-8. int  Search(Stack  *stk,  int  num); 
 It is the  function that finds the input number in stack
 
+<br/>
+
 ## 3-9. void Clear(Stack \*stk);
 
 It is function that clears all components in stack **by popping all components until stack is empty**.
+
+<br/>
 
 # 4. Conclusion
 
