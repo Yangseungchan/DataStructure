@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "Queue.h"
 
-void InitQueue(Queue *q)   /* function that initializes the queue */
+void InitQueue(Queue *q) /* function that initializes the queue */
 {
     q->arr = calloc(MAX, sizeof(int));
     q->max = MAX;
@@ -10,69 +10,82 @@ void InitQueue(Queue *q)   /* function that initializes the queue */
     q->front = q->rear = 0;
 }
 
-void Enqueue(Queue *q, int data)   /* function that enqueues the data */
+void Enqueue(Queue *q, int data) /* function that enqueues the data */
 {
-    if(q->num < q->max){
+    if (q->num < q->max)
+    {
         q->arr[q->rear++] = data;
-        if(q->rear >= q->max){
+        if (q->rear >= q->max)
+        {
             q->rear -= q->max;
         }
         q->num++;
     }
 }
 
-void Dequeue(Queue *q)    /* function that dequeues the first input data */
+void Dequeue(Queue *q) /* function that dequeues the first input data */
 {
-    if(q->num > 0){
+    if (q->num > 0)
+    {
         q->arr[q->front++] = 0;
-        if(q->front >= q->max){
+        if (q->front >= q->max)
+        {
             q->front -= q->max;
         }
         q->num--;
     }
 }
 
-int Search(Queue *q, int target)  /* function that searches the data which is same as input data */
+int Search(Queue *q, int target) /* function that searches the data which is same as input data */
 {
-    for(size_t i=q->front; i<q->rear; i++){
-        if(i >= q->max){
+    int count = 0;
+    for (size_t i = q->front; count < q->num; i++, count++)
+    {
+        if (i >= q->max)
+        {
             i -= q->max;
         }
-        if(q->arr[i] == target){
+        if (q->arr[i] == target)
+        {
             return i;
         }
     }
     return FALSE;
 }
 
-int IsEmpty(Queue *q)  /* function that indicates whether it is empty Queue */
+int IsEmpty(Queue *q) /* function that indicates whether it is empty Queue */
 {
-    if((q->front == q->rear) && (q->num == 0)){
+    if ((q->front == q->rear) && (q->num == 0))
+    {
         return TRUE;
     }
     return FALSE;
 }
 
-int IsFull(Queue *q)   /* function that indicates whether it is full Queue */
+int IsFull(Queue *q) /* function that indicates whether it is full Queue */
 {
-    if((q->front == q->rear) && (q->num == q->max)){
+    if ((q->front == q->rear) && (q->num == q->max))
+    {
         return TRUE;
     }
     return FALSE;
 }
 
-void Clear(Queue *q)   /* function that clears all datas in Queue */
+void Clear(Queue *q) /* function that clears all datas in Queue */
 {
-    while(q->num > 0){
+    while (q->num > 0)
+    {
         Dequeue(q);
     }
 }
 
-void PrintQueue(Queue *q)  /* function that prints all datas in Queue */
+void PrintQueue(Queue *q) /* function that prints all datas in Queue */
 {
     int count = 0;
-    for(size_t i=q->front; count < q->num; i++,count++){
-        if(i>=q->max){
+    for (size_t i = q->front; count < q->num; i++, count++)
+    {
+        if (i >= q->max)
+        {
             i -= q->max;
         }
         printf("%d ", q->arr[i]);
