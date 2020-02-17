@@ -7,6 +7,8 @@
 
 It is the DataStructure based on C language. Here are the contents of this project
 
+<br/>
+
 | CATEGORIZE |        NAME        |                                  FEATURE                                  | Difficulty |
 | :--------: | :----------------: | :-----------------------------------------------------------------------: | :--------: |
 |    List    |     ArrayList      |                     The list which is based on Array                      |   ★☆☆☆☆☆   |
@@ -15,3 +17,14 @@ It is the DataStructure based on C language. Here are the contents of this proje
 |            | CircularDoubleList |       The list which is CircularLinkedList combined with DoubleList       |   ★★★★☆☆   |
 |   Stack    |       Stack        |                     The array that stacks the datas.                      |   ★☆☆☆☆☆   |
 |   Queue    |       Queue        |               The array that features FIFO using ring buffer.             |   ★★☆☆☆☆   |
+
+<br/>
+
+# Reference
+
+1. [<자료구조와 함께 배우는 알고리즘 입문 - C언어 편>](https://book.naver.com/bookdb/book_detail.nhn?bid=13057264), 이지스퍼블리싱, created by Bohyoh Shibata, translated by 강민
+
+<br/>
+
+2. [윤성우의 열혈 자료구조](https://book.naver.com/bookdb/book_detail.nhn?bid=6809127), 오렌지미디어, created by 윤성우
+
