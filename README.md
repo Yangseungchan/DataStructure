@@ -22,7 +22,7 @@ It is the DataStructure based on C language. Here are the contents of this proje
 
 # Reference
 
-1. [<자료구조와 함께 배우는 알고리즘 입문 - C언어 편>](https://book.naver.com/bookdb/book_detail.nhn?bid=13057264), 이지스퍼블리싱, created by Bohyoh Shibata, translated by 강민
+1. [자료구조와 함께 배우는 알고리즘 입문 - C언어 편](https://book.naver.com/bookdb/book_detail.nhn?bid=13057264), 이지스퍼블리싱, created by Bohyoh Shibata, translated by 강민
 
 <br/>
 
