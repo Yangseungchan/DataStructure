@@ -39,7 +39,15 @@ void Remove(IntSet *s, int n) /* function that removes number in IntSet s */
     {
         if ((idx = IsMember(s, n)) != FALSE) /* only n does exist in IntSet s */
         {
-            s->IntSet[idx] = s->IntSet[--s->num]; /* replacing idx's number with the last number of IntSet s decreasing the number of components in IntSet s */
+            if (s->num > 1)
+            {
+                s->IntSet[idx] = s->IntSet[--s->num]; /* replacing idx's number with the last number of IntSet s decreasing the number of components in IntSet s */
+            }
+            else
+            {
+                s->IntSet[idx] = 0;
+                s->num--;
+            }
         }
     }
 }
