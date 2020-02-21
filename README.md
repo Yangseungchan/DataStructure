@@ -17,6 +17,7 @@ It is the DataStructure based on C language. Here are the contents of this proje
 |            | CircularDoubleList |       The list which is CircularLinkedList combined with DoubleList       |   ★★★★☆☆   |
 |   Stack    |       Stack        |                     The array that stacks the datas.                      |   ★☆☆☆☆☆   |
 |   Queue    |       Queue        |               The array that features FIFO using ring buffer.             |   ★★☆☆☆☆   |
+|    Set     |       IntSet       |                 Set that contains integers based on Array.                |   ★☆☆☆☆☆   |
 
 <br/>
 
