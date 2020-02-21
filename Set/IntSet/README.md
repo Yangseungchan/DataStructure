@@ -19,7 +19,7 @@ Based on them, there are basic calculations for **Set** which is **somehow diffe
 
 <br/>
 
-![IntSet_Figure1-1](./images/IntSEt_Figure1-1.png)
+![IntSet_Figure1-1](./images/IntSet_Figure1-1.png)
 
 <br/>
 
@@ -31,7 +31,7 @@ As you can see in above _Figure 1-1_, the Sets can be described with two arrays.
 
 <br/>
 
-![IntSet_Figure1-2](./images/IntSEt_Figure1-2.png)
+![IntSet_Figure1-2](./images/IntSet_Figure1-2.png)
 
 <br/>
 
@@ -43,7 +43,7 @@ As you can see in _Figure 1-2_, **Union calculation** can be interpreted as **th
 
 <br/>
 
-![IntSet_Figure1-3](./images/IntSEt_Figure1-3.png)
+![IntSet_Figure1-3](./images/IntSet_Figure1-3.png)
 
 <br/>
 
@@ -55,7 +55,7 @@ As you can see in _Figure 1-3_, **Difference calculation** can be interpreted as
 
 <br/>
 
-![Figure1-4](./images/IntSEt_Figure1-4.png)
+![IntSet_Figure1-4](./images/IntSet_Figure1-4.png)
 
 <br/>
 
@@ -115,7 +115,7 @@ It is the function that **indicates whether the number is member of IntSet s**. 
 
 <br/>
 
-![Figure3-1](./images/IntSEt_Figure3-1.png)
+![Figure3-1](./images/IntSet_Figure3-1.png)
 
 <br/>
 
@@ -127,7 +127,7 @@ It is function that **adds number n to IntSet s**. If it is checked that **s->nu
 
 <br/>
 
-![IntSet_Figure3-2](./images/IntSEt_Figure3-2.png)
+![IntSet_Figure3-2](./images/IntSet_Figure3-2.png)
 
 <br/>
 
@@ -152,7 +152,7 @@ It is the function that **returns capacity of IntSet s(s->max)**.
 
 <br/>
 
-![IntSet_Figure3-3](./images/IntSEt_Figure3-3.png)
+![IntSet_Figure3-3](./images/IntSet_Figure3-3.png)
 
 It is the function that **assigns all components in s2 to s1**. It is like **copying all components of s2 to s1**. However, it depends on **s1->max**. If **s1->max is less than s2->num** then, **s1->num is set to s1->max** which means that **only s1->max of s2->num components are assigned to IntSet s1**.
 
@@ -170,7 +170,7 @@ It is the function that makes **Union set of s2 and s3**(like _chapter 1-B_) and
 
 <br/>
 
-![IntSet_Figure3-4](./images/IntSEt_Figure3-4.png)
+![IntSet_Figure3-4](./images/IntSet_Figure3-4.png)
 
 <br/>
 
@@ -184,7 +184,7 @@ It is the function that makes **difference set of s2 and s3**(_like chapter 1-C_
 
 <br/>
 
-![IntSet_Figure3-5](./images/IntSEt_Figure3-5.png)
+![IntSet_Figure3-5](./images/IntSet_Figure3-5.png)
 
 <br/>
 
@@ -198,7 +198,7 @@ It is the function that **makes intersecting set of s2 and s3**(_like chapter 1-
 
 <br/>
 
-![IntSet_Figure3-6](./images/IntSEt_Figure3-6.png)
+![IntSet_Figure3-6](./images/IntSet_Figure3-6.png)
 
 <br/>
 
