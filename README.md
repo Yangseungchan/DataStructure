@@ -18,6 +18,8 @@ It is the DataStructure based on C language. Here are the contents of this proje
 |   Stack    |       Stack        |                     The array that stacks the datas.                      |   ★☆☆☆☆☆   |
 |   Queue    |       Queue        |               The array that features FIFO using ring buffer.             |   ★★☆☆☆☆   |
 |    Set     |       IntSet       |                 Set that contains integers based on Array.                |   ★☆☆☆☆☆   |
+|            |       BitSet       |                 Set that contains integer using unsigned int bit.         |   ★★☆☆☆☆   |
+
 
 <br/>
 
