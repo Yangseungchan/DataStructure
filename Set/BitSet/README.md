@@ -100,6 +100,8 @@ It is the function that **removes n from BitSet s**. It can be done by using bit
 
 By **taking NOT operator on SetOf(8)**, every bit in SetOf(8) becomes 1 except the 8th bit. After that, **taking AND operator s with ~SetOf(8)** can **remove 1bit at 8th bit from BitSet s** like _Figure 3-3._
 
+<br/>
+
 ## 3-5. int Size(BitSet s)
 
 It is the function that **returns the size of BitSet s**. It can be done **by using AND operator**.
@@ -109,6 +111,7 @@ It is the function that **returns the size of BitSet s**. It can be done **by us
 ![BitSet_Figure3-4-1](./images/BitSet_Figure3-4-1.png)
 
 ![BitSet_Figure3-4-2](./images/BitSet_Figure3-4-2.png)
+
 <br/>
 
 Before using **AND operator**, you need to to make **BitSet s-1**. After that, you have to **take AND operator s with s-1**. By doing so, you can **remove rightmost 1 bit in BitSet s** like _Figure 3-4-1_ and _Figure 3-4-2_. It is done until s is not 0. While you are doing so, **you have to count how many AND operators have been taken**.
