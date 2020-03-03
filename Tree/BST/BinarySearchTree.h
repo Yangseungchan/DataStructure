@@ -22,6 +22,6 @@ void PrintBST(BinNode *p); /* function that prints the BST p*/
 
 void PrintTree(BinNode *nde, int level, int direction); /* function that prints the BST in 2 dimension */
 
-void FreeTree(BinNode *p); /* function that frees the all nodes in BST p */
+void FreeTree(BinNode **p); /* function that frees the all nodes in BST p */
 
 #endif

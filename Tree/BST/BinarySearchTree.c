@@ -51,7 +51,7 @@ BinNode *Add(BinNode *p, int data) /* function that adds the new data to BST */
         {
             if (temp->data == data)
             {
-                return NULL;
+                return p;
             }
             else if (temp->data < data)
             {
@@ -112,7 +112,7 @@ int Remove(BinNode **root, int data) /* function that removes the node which has
             //printf("target has no child\n");
             if (flag == 0) /* target is root without any child */
             {
-                *root = NULL;
+                (*root) = NULL;
             }
             else if (flag == 1) /* target is left child */
             {
@@ -232,4 +232,10 @@ void PrintTree(BinNode *nde, int level, int direction) /* function that prints t
     }
 }
 
-void FreeTree(BinNode *p); /* function that frees the all nodes in BST p */
+void FreeTree(BinNode **p) /* function that frees the all nodes in BST p */
+{
+    while (*p != NULL)
+    {
+        Remove(p, (*p)->data);
+    }
+}
