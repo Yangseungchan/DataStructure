@@ -150,7 +150,7 @@ While **temp becomes _NULL_** which means that **it finds the position of nde**,
 
  <br/>
 
-![BST_Figure3-1-3](./images/BST_Figure3-1-1.png)
+![BST_Figure3-1-3](./images/BST_Figure3-1-3.png)
 
 <br/>
 
