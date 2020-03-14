@@ -78,36 +78,37 @@ BinNode *Add(BinNode *p, int data) /* function that adds the new data to BST */
 
 int Remove(BinNode **root, int data) /* function that removes the node which has input data */
 {
-    BinNode *target, *parent, *child, *child_parent;
+    BinNode **target;
+    BinNode *parent, *child, *child_parent;
     int tmp_data, flag; /* flag is indicator which indicates the target is left or right child of the parent */
-    target = *root;
+    target = root;
     parent = NULL;
-    flag = 0;                                      /* target is root */
-    while (target != NULL && target->data != data) /* searching target node to be removed */
+    flag = 0;                                          /* target is root */
+    while (*target != NULL && (*target)->data != data) /* searching target node to be removed */
     {
-        if (target->data < data)
+        if ((*target)->data < data)
         {
             flag = 2; /* target is right child of the parent */
-            parent = target;
-            target = target->right;
+            parent = *target;
+            *target = (*target)->right;
         }
         else
         {
             flag = 1; /* target is left child of the parent */
-            parent = target;
-            target = target->left;
+            parent = *target;
+            *target = (*target)->left;
         }
     }
     /* process of searching target is ended */
     //printf("target : %d\n", target->data);
 
-    if (target == NULL) /* if target is not found */
+    if (*target == NULL) /* if target is not found */
     {
         return -1;
     }
     else /* if the target is found */
     {
-        if (target->left == NULL && target->right == NULL) /* if target node has no child */
+        if ((*target)->left == NULL && (*target)->right == NULL) /* if target node has no child */
         {
             //printf("target has no child\n");
             if (flag == 0) /* target is root without any child */
@@ -123,18 +124,18 @@ int Remove(BinNode **root, int data) /* function that removes the node which has
                 parent->right = NULL;
             }
         }
-        else if (target->left == NULL || target->right == NULL) /* if target node has one childs */ /* How can I do if target is root? */
+        else if ((*target)->left == NULL || (*target)->right == NULL) /* if target node has one childs */ /* How can I do if target is root? */
         {
             //printf("target has one child\n");
-            if (target->left != NULL) /* target node has only left child */
+            if ((*target)->left != NULL) /* target node has only left child */
             {
-                child = target->left;
-                target->left = NULL;
+                child = (*target)->left;
+                (*target)->left = NULL;
             }
             else /* target node has only right child */
             {
-                child = target->right;
-                target->right = NULL;
+                child = (*target)->right;
+                (*target)->right = NULL;
             }
             if (flag == 0)
             {
@@ -152,8 +153,8 @@ int Remove(BinNode **root, int data) /* function that removes the node which has
         else /* if target node has two child */
         {
             //printf("two child\n");
-            child = target->left;
-            child_parent = target;
+            child = (*target)->left;
+            child_parent = *target;
             while (child->right != NULL) /* searching the biggest child of the target */
             {
                 child_parent = child;
@@ -161,12 +162,12 @@ int Remove(BinNode **root, int data) /* function that removes the node which has
             }
             /* searching biggest child of the target is ended */
 
-            target->data = child->data; /* changing target's data with child's data */
+            (*target)->data = child->data; /* changing target's data with child's data */
 
             if (child->left == NULL) /*child has no its child */
             {
                 //printf("child has no child\n");
-                if (child == target->left)
+                if (child == (*target)->left)
                 {
                     child_parent->left = NULL;
                 }
@@ -177,7 +178,7 @@ int Remove(BinNode **root, int data) /* function that removes the node which has
             }
             else /* child has one child (in this case left child is only possible) */
             {
-                if (child == target->left)
+                if (child == (*target)->left)
                 {
                     child_parent->left = child->left;
                 }
@@ -187,6 +188,7 @@ int Remove(BinNode **root, int data) /* function that removes the node which has
                 }
             }
         }
+        free(*target);
         return 0;
     }
     return -1;
