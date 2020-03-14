@@ -16,10 +16,10 @@ It is the DataStructure based on C language. Here are the contents of this proje
 |            |     CursorList     | The list which is described as linkedlist logically but is based on Array |   ★★★★☆☆   |
 |            | CircularDoubleList |       The list which is CircularLinkedList combined with DoubleList       |   ★★★★☆☆   |
 |   Stack    |       Stack        |                     The array that stacks the datas.                      |   ★☆☆☆☆☆   |
-|   Queue    |       Queue        |               The array that features FIFO using ring buffer.             |   ★★☆☆☆☆   |
-|    Set     |       IntSet       |                 Set that contains integers based on Array.                |   ★☆☆☆☆☆   |
-|            |       BitSet       |                 Set that contains integer using unsigned int bit.         |   ★★☆☆☆☆   |
-
+|   Queue    |       Queue        |              The array that features FIFO using ring buffer.              |   ★★☆☆☆☆   |
+|    Set     |       IntSet       |                Set that contains integers based on Array.                 |   ★☆☆☆☆☆   |
+|            |       BitSet       |             Set that contains integer using unsigned int bit.             |   ★★☆☆☆☆   |
+|    Tree    |  BinarySearchTree  | The tree using Binary Search for inserting, deleting and searching nodes. |   ★★★★☆☆   |
 
 <br/>
 
@@ -30,4 +30,3 @@ It is the DataStructure based on C language. Here are the contents of this proje
 <br/>
 
 2. [윤성우의 열혈 자료구조](https://book.naver.com/bookdb/book_detail.nhn?bid=6809127), 오렌지미디어, created by 윤성우
-
