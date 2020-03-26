@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "Stack.h"
 
-
 typedef enum
 {
     DEFAULT,
@@ -26,8 +25,7 @@ Menu SelectMenu(void)
         "CHECK EMPTINESS",
         "CHECK FULLNESS",
         "SEARCH",
-        "TERMINATE PROGRAM"
-    };
+        "TERMINATE PROGRAM"};
     do
     {
         for (i = PUSH; i < TERMINATE; i++)
@@ -64,12 +62,14 @@ int main(void)
             break;
 
         case POP:
-            Pop(&stk);
+            result = Pop(&stk);
+            printf("%d is popped from stack\n", result);
             putchar('\n');
             break;
 
         case PEEK:
-            Peek(&stk);
+            result = Peek(&stk);
+            printf("%d is the top component of stack\n", result);
             putchar('\n');
             break;
 
@@ -79,20 +79,24 @@ int main(void)
             break;
 
         case ISEMPTY:
-            if(IsEmpty(&stk) == FALSE){
+            if (IsEmpty(&stk) == FALSE)
+            {
                 printf("It's not empty\n");
             }
-            else{
+            else
+            {
                 printf("It's empty\n");
             }
             putchar('\n');
             break;
 
         case ISFULL:
-            if(IsFull(&stk) == FALSE){
+            if (IsFull(&stk) == FALSE)
+            {
                 printf("It's not full\n");
             }
-            else{
+            else
+            {
                 printf("It's full\n");
             }
             putchar('\n');
@@ -102,11 +106,13 @@ int main(void)
             printf("input the number to search : ");
             scanf("%d", &num);
             result = Search(&stk, num);
-            if(result == FALSE){
+            if (result == FALSE)
+            {
                 printf("FAILURE TO SEARCH\n");
             }
-            else{
-                printf("It is positioned at #%d\n", result+1);
+            else
+            {
+                printf("It is positioned at #%d\n", result + 1);
             }
             putchar('\n');
             break;

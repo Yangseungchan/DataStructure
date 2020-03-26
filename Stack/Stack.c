@@ -21,21 +21,17 @@ void Push(Stack *stk, int num) /* function that pushes new number to stack */
     }
 }
 
-void Pop(Stack *stk) /* function that pops a number from stack */
+int Pop(Stack *stk) /* function that pops a number from stack */
 {
     if (IsEmpty(stk) == FALSE)
     {
-        printf("Component %d has been popped from stack\n", stk->s_arr[stk->top]);
-        stk->s_arr[stk->top--] = -1;
+        return stk->s_arr[stk->top--];
     }
 }
 
-void Peek(Stack *stk) /* function that prints the top component in stack */
+int Peek(Stack *stk) /* function that prints the top component in stack */
 {
-    if (IsEmpty(stk) == FALSE)
-    {
-        printf("Top component in Stack : %d\n", stk->s_arr[stk->top]);
-    }
+    return stk->s_arr[stk->top];
 }
 
 void PrintStack(Stack *stk) /* function that prints the whole components in stack */
