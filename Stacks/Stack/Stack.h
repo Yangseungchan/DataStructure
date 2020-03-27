@@ -2,7 +2,7 @@
 #define __STACK_H__
 
 #define TRUE 1
-#define FALSE -1
+#define FALSE 0
 #define MAX 500
 
 typedef struct __Stack
