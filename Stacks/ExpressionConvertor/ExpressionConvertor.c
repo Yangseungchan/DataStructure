@@ -42,7 +42,7 @@ void convertExpression(char expression[], int length)
     int i, idx, value;
     Stack stk;
     char op;
-    char *result = calloc(sizeof(char), length * 2);
+    char *result = calloc(sizeof(char), length * 3);
 
     idx = 0;
     InitStack(&stk);
