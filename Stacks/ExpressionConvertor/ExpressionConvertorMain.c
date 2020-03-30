@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "FormulaConvertor.h"
+#include "ExpressionConvertor.h"
 
 int main(void)
 {
@@ -12,7 +12,7 @@ int main(void)
 
     length = strlen(formula);
 
-    convertFormula(formula, length);
+    convertExpression(formula, length);
     putchar('\n');
     printf("result : %s\n", formula);
 

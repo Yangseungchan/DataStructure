@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "CharStack.h"
-#include "FormulaConvertor.h"
+#include "ExpressionConvertor.h"
 
 int opPriority(char op)
 {
@@ -37,7 +37,7 @@ int compPriority(char op1, char op2)
     }
 }
 
-void convertFormula(char formula[], int length)
+void convertExpression(char expression[], int length)
 {
     int i, idx, value;
     Stack stk;
@@ -48,32 +48,32 @@ void convertFormula(char formula[], int length)
     InitStack(&stk);
     for (i = 0; i < length; i++)
     {
-        if (isdigit(formula[i]))
+        if (isdigit(expression[i]))
         {
-            result[idx++] = formula[i];
+            result[idx++] = expression[i];
         }
         else
         {
-            if (result[idx - 1] != ' ')
+            if (result[idx - 1] != ' ') /* preventing double space & making more convenient readiness in result by making space */
             {
                 result[idx++] = ' ';
             }
             if (IsEmpty(&stk) == TRUE) /* If stack is empty */
             {
-                Push(&stk, formula[i]);
+                Push(&stk, expression[i]);
             }
             else /* In case of that stack is not empty */
             {
-                if (formula[i] == '(')
+                if (expression[i] == '(')
                 {
-                    Push(&stk, formula[i]);
+                    Push(&stk, expression[i]);
                 }
-                else if (formula[i] == ')')
+                else if (expression[i] == ')')
                 {
                     while (Peek(&stk) != '(')
                     {
-                        result[idx++] = Pop(&stk); /* popping operators except '(' */
-                        if (result[idx - 1] != ' ')
+                        result[idx++] = Pop(&stk);  /* popping operators except '(' */
+                        if (result[idx - 1] != ' ') /* preventing double space & making more convenient readiness in result by making space */
                         {
                             result[idx++] = ' ';
                         }
@@ -82,21 +82,21 @@ void convertFormula(char formula[], int length)
                 }
                 else
                 {
-                    if (compPriority(Peek(&stk), formula[i]) == -1) /* In case that stk's top < formula[i] */
+                    if (compPriority(Peek(&stk), expression[i]) == -1) /* In case that stk's top < expression[i] */
                     {
-                        Push(&stk, formula[i]);
+                        Push(&stk, expression[i]);
                     }
                     else
                     {
-                        while (compPriority(Peek(&stk), formula[i]) != -1 && Peek(&stk) != '(')
+                        while (compPriority(Peek(&stk), expression[i]) != -1 && Peek(&stk) != '(')
                         {
                             result[idx++] = Pop(&stk);
-                            if (result[idx] != ' ')
+                            if (result[idx] != ' ') /* preventing double space & making more convenient readiness in result by making space */
                             {
                                 result[idx++] = ' ';
                             }
                         }
-                        Push(&stk, formula[i]);
+                        Push(&stk, expression[i]);
                     }
                 }
             }
@@ -116,6 +116,6 @@ void convertFormula(char formula[], int length)
         }
     }
 
-    strcpy(formula, result);
+    strcpy(expression, result);
     free(result);
 }
