@@ -118,4 +118,5 @@ void convertExpression(char expression[], int length)
 
     strcpy(expression, result);
     free(result);
+    free(stk.s_arr);
 }
