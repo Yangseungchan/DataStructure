@@ -31,7 +31,7 @@ int compPriority(char op1, char op2)
     {
         return 0;
     }
-    else
+    else /* op1 has smaller priority than op2 */
     {
         return -1;
     }
