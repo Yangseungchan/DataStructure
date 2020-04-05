@@ -64,11 +64,11 @@ void convertExpression(char expression[], int length)
             }
             else /* In case of that stack is not empty */
             {
-                if (expression[i] == '(')
+                if (expression[i] == '(') /* When operator ( is read */
                 {
                     Push(&stk, expression[i]);
                 }
-                else if (expression[i] == ')')
+                else if (expression[i] == ')') /* When operator ) is read */
                 {
                     while (Peek(&stk) != '(')
                     {
@@ -80,15 +80,15 @@ void convertExpression(char expression[], int length)
                     }
                     Pop(&stk); /* Popping '(' */
                 }
-                else
+                else /* When the operators except (, ) are read */
                 {
-                    if (compPriority(Peek(&stk), expression[i]) == -1) /* In case that stk's top < expression[i] */
+                    if (compPriority(Peek(&stk), expression[i]) == -1) /* In case that (stk's top) < (expression[i]) */
                     {
                         Push(&stk, expression[i]);
                     }
                     else
                     {
-                        while (compPriority(Peek(&stk), expression[i]) != -1 && Peek(&stk) != '(')
+                        while (compPriority(Peek(&stk), expression[i]) != -1 && Peek(&stk) != '(') /* while the stk's top is not smaller priority and operator stk's top is not ( */
                         {
                             result[idx++] = Pop(&stk);
                             if (result[idx] != ' ') /* preventing double space & making more convenient readiness in result by making space */
