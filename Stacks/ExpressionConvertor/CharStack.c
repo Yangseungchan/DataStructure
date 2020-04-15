@@ -4,7 +4,7 @@
 
 void InitStack(Stack *stk) /* function that initializes the new stack */
 {
-    stk->s_arr = calloc(MAX, sizeof(int));
+    stk->s_arr = calloc(MAX, sizeof(char));
     stk->max = MAX;
     stk->top = -1;
 }
