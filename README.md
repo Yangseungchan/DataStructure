@@ -31,3 +31,13 @@ It is the DataStructure based on C language. Here are the contents of this proje
 <br/>
 
 2. [윤성우의 열혈 자료구조](https://book.naver.com/bookdb/book_detail.nhn?bid=6809127), 오렌지미디어, created by 윤성우
+
+<br/>
+
+<br/>
+
+# Compiler
+
+![](https://i.imgur.com/IHWFjEi.png)
+
+All codes in this repository are compiled with **GCC 9.2.0** by 2019 Free Software Foundation, Inc.
