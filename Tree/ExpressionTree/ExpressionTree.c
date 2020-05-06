@@ -48,12 +48,7 @@ BinNode *MakeExpTree(char expression[MAXEXP])
                                 /* for making them in order of tree */
 
             _Push(&bnstk, bnde);
-
-            bnde = nde1 = nde2 = NULL;
-            free(nde1);
-            free(nde2);
         }
-        free(bnde);
         token = strtok(NULL, " ");
     }
     root = _Pop(&bnstk);
