@@ -30,8 +30,8 @@ int RemoveTree(BinNode **root) /* function that removes the node which has input
     {
         RemoveTree(&((*root)->right));
     }
-    *root = NULL;
     free(*root);
+    *root = NULL;
     return 0;
 }
 
