@@ -39,8 +39,6 @@ BinNode *MakeExpTree(char expression[MAXEXP])
         }
         else /* In case that token is not digit(= is operator) */
         {
-            nde1 = AllocNode();
-            nde2 = AllocNode();
             SetBinNode(bnde, token);
             nde1 = _Pop(&bnstk);
             nde2 = _Pop(&bnstk);
