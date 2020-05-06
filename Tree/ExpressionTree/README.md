@@ -38,11 +38,11 @@ After that, **the same process** is also applied to **other remaining nodes**. A
 
 <br/>
 
-If we are given infix expression, how can we change it as an expression tree? For doing so, the **1 process is required**.
+If we are given infix expression, how can we change it as an expression tree? Before doing it, the **change from infix expression to postfix expression is required**.
 
 <br/>
 
-What you are required is to change **infix expression to postfix expression**. What changes it to postfix expression is [Expression Convertor](https://github.com/Yangseungchan/DataStructure-based-on-C/tree/master/Stacks/ExpressionConvertor) which has been done in chapter **Stacks**. By changing to **postfix expression**, it can be easier for system to **convert expression to expression tree**.
+What changes it to postfix expression is [Expression Convertor](https://github.com/Yangseungchan/DataStructure-based-on-C/tree/master/Stacks/ExpressionConvertor) which has been done in chapter **Stacks**. By changing to **postfix expression**, it can be easier for system to **convert expression to expression tree**.
 
 <br/>
 
@@ -58,7 +58,11 @@ After that, it's now ready to change postfix expression into expression tree. Fo
 
 Let's build an expression tree with **postfix expression** such as **"7 4 2 \* + 1 -"** which came from **infix expression** **"7+4\*2-1"**.
 
-Unlike the convertor from infix to postfix, **the operands are pushed into stack** like above **#1** in Figure 1-2-1 . However, when **an operator is read**, the operator **becomes the root node** of the subtree. And **the two nodes**(mostly operands but sometimes operators) **which were pushed previously** are **popped for making an expression as a pair of one operator with two operands** like above **#2-1 ~ #2-2** in _Figure 1-2-1_. What you can notice is that the **first popped operand becomes right child** of the operator and the **second popped one becomes left child of the operator** which is for **making them in the order of calculation**. Once the subtree which has three nodes is made, the **root node of the subtree is supposed to be pushed into stack**.
+Unlike the convertor from infix to postfix, **the operands are pushed into stack** like above **#1** in _Figure 1-2-1_ . However, when **an operator is read**, the operator **becomes the root node** of the subtree. And **the two nodes**(mostly operands but sometimes operators) **which were pushed previously** are **popped for making an expression as a pair of one operator with two operands** like above **#2-1 ~ #2-2** in _Figure 1-2-1_.
+
+<br/>
+
+What you can notice is that the **first popped operand becomes right child** of the operator and the **second popped one becomes left child of the operator** which is for **making them in the order of calculation**. Once the subtree which has three nodes is made, the **root node of the subtree is supposed to be pushed into stack**.
 
 <br/>
 
@@ -100,23 +104,43 @@ To sum up those things, it can be summarized as above _Figure 1-3_.
 
 ```mermaid
 
+
+
 graph LR
+
+
 
 A(Expression Tree Convertor) --- B(Expression Convertor)
 
+
+
 A --- C(Tree Convetor)
+
+
 
 B --- D(CharStack)
 
+
+
 D --- E[The Stack that contains character]
+
+
 
 C --- F(NodeStack)
 
+
+
 C --- G(BinaryTree)
+
+
 
 F --- H[The Stack that contains BinNode]
 
+
+
 G --- I[The tree that contains BinNode]
+
+
 
 
 
