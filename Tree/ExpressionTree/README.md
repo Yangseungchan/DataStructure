@@ -14,7 +14,7 @@ The expression tree is a **BinaryTree** that **contains all operands and operato
 
 <br/>
 
-![ExpressionTree_Figure1-1](https://i.imgur.com/0stnzq8.png)
+![ExpressionTree_Figure1-1](./images/ExpressionTree_Figure1-1.png)
 
 <br/>
 
@@ -24,7 +24,7 @@ As you can see in above _Figure 1-1_, **one operand node** is surrounded with **
 
 <br/>
 
-![ExpressionTree_Figure1-2](https://i.imgur.com/irbfuDO.png)
+![ExpressionTree_Figure1-2](./images/ExpressionTree_Figure1-2.png)
 
 <br/>
 
@@ -52,7 +52,7 @@ After that, it's now ready to change postfix expression into expression tree. Fo
 
 <br/>
 
-![ExpressionTree_Figure1-2-1](https://i.imgur.com/hhiVBks.png)
+![ExpressionTree_Figure1-2-1](./images/ExpressionTree_Figure1-2-1.png)
 
 <br/>
 
@@ -70,11 +70,11 @@ What you can notice is that the **first popped operand becomes right child** of 
 
 <br/>
 
-![ExpressionTree_Figure1-2-2](https://i.imgur.com/CfsI3AF.png)
+![ExpressionTree_Figure1-2-2](./images/ExpressionTree_Figure1-2-2.png)
 
 <br/>
 
-![ExpressionTree_Figure1-2-3](https://i.imgur.com/KhRNjzC.png)
+![ExpressionTree_Figure1-2-3](./images/ExpressionTree_Figure1-2-3.png)
 
 <br/>
 
@@ -84,7 +84,7 @@ Likewise, if the operator is read, then the **two nodes which had been pushed is
 
 <br/>
 
-![ExpressionTree_Figure1-3](https://i.imgur.com/uETUmyt.png)
+![ExpressionTree_Figure1-3](./images/ExpressionTree_Figure1-3.png)
 
 <br/>
 
@@ -176,7 +176,7 @@ G --- I[The tree that contains BinNode]
 
 <br/>
 
-![ExpressionTree_Figure2-1](https://i.imgur.com/yf9yIXa.png)
+![ExpressionTree_Figure2-1](./images/ExpressionTree_Figure2-1.png)
 
 <br/>
 
@@ -270,7 +270,7 @@ It is the function that **checks whether the given token(a collection of chars) 
 
 <br/>
 
-![ExpressionTree_Figure3-1](https://i.imgur.com/9Q8selS.png)
+![ExpressionTree_Figure3-1](./images/ExpressionTree_Figure3-1.png)
 
 <br/>
 
@@ -294,11 +294,11 @@ These processes **are repeated until there is no more things to be read in given
 
 <br/>
 
-![ExpressionTree_Figure3-2](https://i.imgur.com/f8J6izY.png)
+![ExpressionTree_Figure3-2](./images/ExpressionTree_Figure3-2.png)
 
 <br/>
 
-![ExpressionTree_Figure3-3](https://i.imgur.com/fIr9qhL.png)
+![ExpressionTree_Figure3-3](./images/ExpressionTree_Figure3-3.png)
 
 <br/>
 
