@@ -59,8 +59,8 @@ After that, it's now ready to change postfix expression into expression tree. Fo
 Let's build an expression tree with **postfix expression** such as **"7 4 2 \* + 1 -"** which came from **infix expression** **"7+4\*2-1"**.
 
 <br/>
-  
-Unlike the convertor from infix to postfix, **the operands are pushed into stack** like above **#1** in *Figure 1-2-1* . However, when **an operator is read**, the operator **becomes the root node** of the subtree. And **the two nodes**(mostly operands but sometimes operators) **which were pushed previously** are **popped for making an expression as a pair of one operator with two operands** like above **#2-1 ~ #2-2** in _Figure 1-2-1_.
+
+Unlike the convertor from infix to postfix, **the operands are pushed into stack** like above **#1** in _Figure 1-2-1_ . However, when **an operator is read**, the operator **becomes the root node** of the subtree. And **the two nodes**(mostly operands but sometimes operators) **which were pushed previously** are **popped for making an expression as a pair of one operator with two operands** like above **#2-1 ~ #2-2** in _Figure 1-2-1_.
 
 <br/>
 
@@ -108,7 +108,11 @@ To sum up those things, it can be summarized as above _Figure 1-3_.
 
 
 
+
+
 graph LR
+
+
 
 
 
@@ -116,7 +120,11 @@ A(Expression Tree Convertor) --- B(Expression Convertor)
 
 
 
+
+
 A --- C(Tree Convetor)
+
+
 
 
 
@@ -124,7 +132,11 @@ B --- D(CharStack)
 
 
 
+
+
 D --- E[The Stack that contains character]
+
+
 
 
 
@@ -132,7 +144,11 @@ C --- F(NodeStack)
 
 
 
+
+
 C --- G(BinaryTree)
+
+
 
 
 
@@ -140,7 +156,11 @@ F --- H[The Stack that contains BinNode]
 
 
 
+
+
 G --- I[The tree that contains BinNode]
+
+
 
 
 
@@ -184,7 +204,7 @@ As you can see in _Figure 2-1_, the **expression tree is composed of three parts
 
 <br/>
 
-### A-1. void ConnectNode(BinNode *nde, BinNode *left, BinNode *right)
+### A-1. void ConnectNode(BinNode *nde, BinNode *left, BinNode \*right)
 
 <br/>
 
@@ -194,11 +214,11 @@ It is the function that **connects the BinNode nde with the two BinNodes as the 
 
 <br/>
 
-### A-2. int RemoveTree(BinNode **root)
+### A-2. int RemoveTree(BinNode \*\*root)
 
 <br/>
 
-It is the function **removes the tree when disallocating the allocated the ExpressionTree**. It is the function that accesses all nodes in BinaryTree **recursively** as it is supposed to remove **all root nodes of subtree in the one whole BinaryTree**. As you can see in the code of this function, the left node of the current root node becomes new root node of the left subtree. And the right node is done as the same way with left node. After it removes the root node of current tree the function is exited.
+It is the function **removes the tree when disallocating the allocated the ExpressionTree**. It accesses all nodes in BinaryTree **recursively** as it is supposed to remove **all root nodes of subtree in the one whole BinaryTree**. As you can see in the code of this function, the **left node of the current root node becomes new root node of the left subtree**. And **the right node is done as the same way with left node**. After it removes the root node of current tree, the function is exited.
 
 <br/>
 
@@ -214,11 +234,11 @@ Other functions are skipped as there is no big difference compared to [Binary Se
 
 <br/>
 
-### B-1. BinNode *_Pop(BNStack *stk)
+### B-1. BinNode *\_Pop(BNStack *stk)
 
 <br/>
 
-It is the function that pops the top component of stack and returns it.
+It is the function that **pops the top component of stack and returns the top BinNode**.
 
 <br/>
 
@@ -234,45 +254,72 @@ Other functions are skipped as there is no big difference compared to [CharStack
 
 <br/>
 
-### C-1. int is_digit(char *token)
+### C-1. int is_digit(char \*token)
 
 <br/>
 
-It is the function that **checks whether the given token(a collection of chars) is number or not**. It checks **two conditions** to confirm it. **One condition is checking the return value of function atoi** which changes the given string into number and **returns 0 if given token is not number**. **Second condition is the given string is not "0" using strcmp** because there can be cases that the given token is "0". By theses conditions, the given token is decided to be digit then it returns TRUE(1). Else it returns FALSE(0).  
-
-
-<br/>
-
-<br/>
-
-### C-2. BinNode *MakeExpTree(char expression[MAXEXP])
-
-<br/>
-
-
+It is the function that **checks whether the given token(a collection of chars) is number or not**. It checks **two conditions** to confirm it. **One condition is checking the return value of function atoi** which changes the given string into number and **returns 0 if given token is not number**. **Second condition is the given string is not "0" using strcmp** because there can be cases that the given token is "0". By theses conditions, the given token is decided to be digit then it returns _TRUE(1)_. Else it returns _FALSE(0)_.
 
 <br/>
 
 <br/>
 
-### C-3. int EvaluateExpTree(BinNode *nde)
-
-<br/>
-
-
-<br/>
-
-<br/>
-
-### C-4. showInfixExp(BinNode *nde), showPostfixExp(BinNode *nde), showPrefixExp(BinNode *nde)
-
-<br/>
-
-
+### C-2. BinNode \*MakeExpTree(char expression[MAXEXP])
 
 <br/>
 
 <br/>
 
+![ExpressionTree_Figure3-1](https://i.imgur.com/9Q8selS.png)
+
+<br/>
+
+It is the function that **makes expression tree using given postfix expression**. This function can be expressed as the above _Figure 3-1_.
+
+<br/>
+
+As I mentioned in **_chapter 1-B_**, the process of converting to expression tree becomes different by checking that the digit is read or not using function **is_digit**. When the **digit is read**, **the new node for BinaryTree is created and contains the read digit** like upper one in _Figure 1-2-1_. However, **if the read one is not digit but operator** then **the new node that contains operator is created popping two nodes in Stack for creating new subtree** like lower one in _Figure 1-2-1_.
+
+<br/>
+
+These processes **are repeated until there is no more things to be read in given postfix expression**. After that, the **root node of expression tree becomes a node at top of the stack** which is returned at the end of this function. Before returning the root node. **it clears out the allocated stack** which is **used for converting process**.
+
+<br/>
+
+<br/>
+
+### C-3. int EvaluateExpTree(BinNode \*nde)
+
+<br/>
+
+<br/>
+
+![ExpressionTree_Figure3-2](https://i.imgur.com/f8J6izY.png)
+
+<br/>
+
+![ExpressionTree_Figure3-3](https://i.imgur.com/fIr9qhL.png)
+
+<br/>
+
+It is the function that **evaluates the total value of the given expression tree**. As you can see the code of this function, it is **recursive function**. The reason I made this function as recursive function is that the converted expression tree is **the collection of subtrees**. As you can see in _Figure 3-2_, the converted expression tree can be considered as the **collection of subtree which has one operator with two operands.** That's why the expression tree can be expressed easier like the _Figure 3-3_.
+
+<br/>
+
+Based on these facts, calculating the expression tree should be done **after calculating left subtree and right subtree**. After **finishing calculation of left subtree and right subtree** which becomes each left operand and right operand, **the calculation between these two operands is done based on the read operator**. And then it returns the result value to become the upper tree's operand.
+
+<br/>
+
+<br/>
+
+### C-4. showInfixExp(BinNode *nde), showPostfixExp(BinNode *nde), showPrefixExp(BinNode \*nde)
+
+It is the function that **converts the given expression tree into infix(or postfix or prefix) expression**. What you have to do is just **traveling the given tree as the appropriate order**. For example, function showInfixExp is supposed to **travel the expression tree by preorder traversal visiting in order of left child, root node, right child.** And for **improving the visuality**, whenever the root node value is printed, **the space(" ") is inserted.**
+
+<br/>
+
+<br/>
 
 # 4. Conclusion
+
+It is the program that **converts the given expression into expression tree and convert it into expression again**. As this program uses both stack and binary tree considering the rules of expression for realizing this function, it is considered one of the most complicated programs in my thought.
