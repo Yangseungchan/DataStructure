@@ -176,22 +176,103 @@ As you can see in _Figure 2-1_, the **expression tree is composed of three parts
 
 ## 3-1. Tree Convertor
 
-### 1-A. is_digit
+<br/>
 
-### 1-B. MakeExpTree()
+<br/>
 
-...
+## 3-1-A. BinaryTree.c
+
+<br/>
+
+### A-1. void ConnectNode(BinNode *nde, BinNode *left, BinNode *right)
+
+<br/>
+
+It is the function that **connects the BinNode nde with the two BinNodes as the childs**.
 
 <br/>
 
 <br/>
 
-<br/>
-
-## 3-2. ExpressionTreeMain.c
+### A-2. int RemoveTree(BinNode **root)
 
 <br/>
 
+It is the function **removes the tree when disallocating the allocated the ExpressionTree**. It is the function that accesses all nodes in BinaryTree **recursively** as it is supposed to remove **all root nodes of subtree in the one whole BinaryTree**. As you can see in the code of this function, the left node of the current root node becomes new root node of the left subtree. And the right node is done as the same way with left node. After it removes the root node of current tree the function is exited.
+
 <br/>
+
+<br/>
+
+Other functions are skipped as there is no big difference compared to [Binary Search Tree](https://github.com/Yangseungchan/DataStructure-based-on-C/tree/master/Tree/BST).
+
+<br/>
+
+<br/>
+
+## 3-1-B. NodeStack.c
+
+<br/>
+
+### B-1. BinNode *_Pop(BNStack *stk)
+
+<br/>
+
+It is the function that pops the top component of stack and returns it.
+
+<br/>
+
+<br/>
+
+Other functions are skipped as there is no big difference compared to [CharStack](https://github.com/Yangseungchan/DataStructure-based-on-C/blob/master/Tree/ExpressionTree/CharStack.c)
+
+<br/>
+
+<br/>
+
+## 3-1-C. ExpressionTree.c
+
+<br/>
+
+### C-1. int is_digit(char *token)
+
+<br/>
+
+It is the function that **checks whether the given token(a collection of chars) is number or not**. It checks **two conditions** to confirm it. **One condition is checking the return value of function atoi** which changes the given string into number and **returns 0 if given token is not number**. **Second condition is the given string is not "0" using strcmp** because there can be cases that the given token is "0". By theses conditions, the given token is decided to be digit then it returns TRUE(1). Else it returns FALSE(0).  
+
+
+<br/>
+
+<br/>
+
+### C-2. BinNode *MakeExpTree(char expression[MAXEXP])
+
+<br/>
+
+
+
+<br/>
+
+<br/>
+
+### C-3. int EvaluateExpTree(BinNode *nde)
+
+<br/>
+
+
+<br/>
+
+<br/>
+
+### C-4. showInfixExp(BinNode *nde), showPostfixExp(BinNode *nde), showPrefixExp(BinNode *nde)
+
+<br/>
+
+
+
+<br/>
+
+<br/>
+
 
 # 4. Conclusion
