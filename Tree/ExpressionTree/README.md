@@ -58,7 +58,9 @@ After that, it's now ready to change postfix expression into expression tree. Fo
 
 Let's build an expression tree with **postfix expression** such as **"7 4 2 \* + 1 -"** which came from **infix expression** **"7+4\*2-1"**.
 
-Unlike the convertor from infix to postfix, **the operands are pushed into stack** like above **#1** in _Figure 1-2-1_ . However, when **an operator is read**, the operator **becomes the root node** of the subtree. And **the two nodes**(mostly operands but sometimes operators) **which were pushed previously** are **popped for making an expression as a pair of one operator with two operands** like above **#2-1 ~ #2-2** in _Figure 1-2-1_.
+<br/>
+  
+Unlike the convertor from infix to postfix, **the operands are pushed into stack** like above **#1** in *Figure 1-2-1* . However, when **an operator is read**, the operator **becomes the root node** of the subtree. And **the two nodes**(mostly operands but sometimes operators) **which were pushed previously** are **popped for making an expression as a pair of one operator with two operands** like above **#2-1 ~ #2-2** in _Figure 1-2-1_.
 
 <br/>
 
@@ -154,7 +156,7 @@ G --- I[The tree that contains BinNode]
 
 <br/>
 
-![ExpressionTree_Figure2-1](https://i.imgur.com/M4AcFbP.png)
+![ExpressionTree_Figure2-1](https://i.imgur.com/yf9yIXa.png)
 
 <br/>
 
@@ -166,19 +168,27 @@ As I mentioned, **for converting given expression into expression tree**, it is 
 
 # 3. Functions
 
-<br/>
-
-<br/>
-
-## 3-1.
+As you can see in _Figure 2-1_, the **expression tree is composed of three parts**. The **first one is Expression Convertor,** the **second one is the Tree convertor** and **the third one is Main Function part**. Because I already discussed about the first part in chapter [Expression Convertor](https://github.com/Yangseungchan/DataStructure-based-on-C/tree/master/Stacks/ExpressionConvertor), I will talk **the second part which is about converting to tree from postfix expression** and **the third part which is about main function** which **includes converting to expressions from expression tree**.
 
 <br/>
 
 <br/>
 
+## 3-1. Tree Convertor
+
+### 1-A. is_digit
+
+### 1-B. MakeExpTree()
+
+...
+
 <br/>
 
-## 3-2.
+<br/>
+
+<br/>
+
+## 3-2. ExpressionTreeMain.c
 
 <br/>
 
