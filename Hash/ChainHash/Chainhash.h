@@ -3,15 +3,17 @@
 
 #include "Member.h"
 
-typedef struct __node{
+typedef struct __node
+{
   Member member;
   struct __node *next;
-}Node;
+} Node;
 
-typedef struct __chainhash{
+typedef struct __chainhash
+{
   int size;
   Node **ChainNode; /* Node Pointer Array; Each element contains Node Pointer that's why it is set as double pointer */
-}ChainHash;
+} ChainHash;
 
 void Initialize(ChainHash *chain, int size);
 

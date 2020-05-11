@@ -4,11 +4,11 @@
 #define MEMBER_NAME 1
 #define MEMBER_NO 2
 
-typedef struct _member{
+typedef struct _member
+{
   char name[20];
-  int no;  
-}Member;
-
+  int no;
+} Member;
 
 void PrintMember(const Member *m);
 
