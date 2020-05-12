@@ -15,14 +15,16 @@ typedef struct __chainhash
   Node **ChainNode; /* Node Pointer Array; Each element contains Node Pointer that's why it is set as double pointer */
 } ChainHash;
 
-void Initialize(ChainHash *chain, int size);
+void Initialize(ChainHash *chain, int size); /* function that initializes the hashtable including allocation, setting size of table */
 
-Node *SetNodeInfo(Member mem, Node *next);
+Node *SetNodeInfo(Member mem, Node *next); /* function that sets the information of the Node */
 
-int HashFunc(int no, ChainHash *chain);
+int HashFunc(int no, ChainHash *chain); /* function that gives the hash key using the member no */
 
-int Add(ChainHash *chain, Member data);
+int Add(ChainHash *chain, Member data); /* function that adds the new node to hash table */
 
 int Delete(ChainHash *chain, Member data);
 
-#endif __CHAINHASH_H__
+void PrintHash(ChainHash *chain); /* function that prints the all nodes in hashtable in order of the keys */
+
+#endif

@@ -4,12 +4,11 @@
 
 void PrintMember(const Member *m)
 {
-  printf("NAME : %s, NO : %d", m->name, m->no);
+  printf("[#%3d / %s]", m->no, m->name);
 }
-
 void PrintMemberln(const Member *m)
 {
-  printf("NAME : %s, NO : %d\n", m->name, m->no);
+  printf("[#%3d / %s]\n", m->no, m->name);
 }
 
 int cmpMemberName(const Member *m1, const Member *m2)

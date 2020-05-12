@@ -37,34 +37,53 @@ int Add(ChainHash *chain, Member data)
 {
   int key = HashFunc(data.no, chain);
   Node *tmp;
-  Node *nde = SetNodeInfo(data, NULL); /* Those jobs are done by this func : allocation, setting node's values, setting next pointer */
+  Node *new_nde = SetNodeInfo(data, NULL); /* Those jobs are done by this func : allocation, setting node's values, setting next pointer */
 
   if (!chain->ChainNode[key])
   {
-    chain->ChainNode[key] = nde;
+    chain->ChainNode[key] = new_nde;
   }
   else
   {
     tmp = chain->ChainNode[key];
     do
     {
-      if (cmpMemberName(&tmp->member, &data) == 0 || cmpMemberNo(&tmp->member, &data) == 0) /* When both two member's name and no are same */
+      if (cmpMemberName(&tmp->member, &data) == 0 || cmpMemberNo(&tmp->member, &data) == 0) /* When two member's name or no are same */
       {
         return -1;
       }
       if (!(tmp->next))
-      { /*this roops are repeated until the next node is NULL */
+      { /*this roop is repeated until the next node is NULL */
         break;
       }
       tmp = tmp->next;
-    } while (1);
+    }while (1);
+    tmp->next = new_nde; /* connecting the node in the assigned key with new added node */
   }
+  return 0;
 }
 
 int Delete(ChainHash *chain, Member data);
 
-int main(void)
-{ /*main function for test */
-
-  return 0;
+void PrintHash(ChainHash *chain){
+  int i, size;
+  size = chain->size;
+  Node *ptr;
+  printf("==================== Printing HashTable ====================\n");
+  for(i=0; i<size; i++){
+    printf("    [%d] -> ", i);
+    ptr = chain->ChainNode[i];
+    if(!ptr){ /* when ptr points nothing(NULL) */
+      printf("[NULL]\n");
+    }
+    else{
+      while(ptr->next){
+         PrintMember(&ptr->member);
+         printf(" -> ");
+         ptr = ptr->next;
+      }
+      PrintMemberln(&ptr->member);
+    }
+  }
+  printf("=============================================================\n");
 }
