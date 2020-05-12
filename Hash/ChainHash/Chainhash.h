@@ -23,7 +23,9 @@ int HashFunc(int no, ChainHash *chain); /* function that gives the hash key usin
 
 int Add(ChainHash *chain, Member data); /* function that adds the new node to hash table */
 
-int Delete(ChainHash *chain, Member data);
+int Delete(ChainHash *chain, Member data); /* function that deletes the node in hashtable */
+
+int Search(ChainHash *chain, int sw); /* function that finds the node in hashtable using name or no; sw is MEMBER_NAME or MEMBER_NO */
 
 void PrintHash(ChainHash *chain); /* function that prints the all nodes in hashtable in order of the keys */
 

@@ -24,7 +24,7 @@ int cmpMemberNo(const Member *m1, const Member *m2)
 Member ScanMember(char *message, int sw)
 {
   Member temp;
-  printf("Input member's information to %s", message);
+  printf("Input member's information to %s\n", message);
   if (sw & MEMBER_NAME)
   {
     printf("NAME : ");
@@ -36,6 +36,6 @@ Member ScanMember(char *message, int sw)
     printf("NO : ");
     scanf("%d", &temp.no);
   }
-
+  printf("\n");
   return temp;
 }

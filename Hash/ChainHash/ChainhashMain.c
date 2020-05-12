@@ -5,16 +5,15 @@
 
 typedef enum menu{
   ADD_NODE = 1, DELETE_NODE, PRINT_TABLE, TERMINATE
-}MENU;
+}Menu;
 
 Menu ScanMenu(){
   int menu;
-  printf("====<SELECT THE MENU THAT YOU WANT TO DO>====\n");
+  printf("============<SELECT THE MENU THAT YOU WANT TO DO>============\n");
   printf("(1) ADDING NEW NODE     (2) DELETING NODE\n");
   printf("(3) PRINTING HASH TABLE (4) TERMINATE PROGRAM\n");
-  printf("======= MENU : "); scanf("%d", &menu); printf("=======\n");
-
-
+  printf("MENU : "); scanf("%d", &menu);
+  printf("=============================================================\n\n");
   return menu;
 }
 
@@ -29,7 +28,7 @@ int main(void)
   printf("Input the size of HashTable : "); scanf("%d", &size);
   Initialize(&ch, size);  /* Initializing the hashtable using the input size */
   printf("Initializing the HashTable is complete!\n");
-  printf("\n\n\n");
+  printf("\n\n");
 
   
   /* selecting the menu that you want to do */

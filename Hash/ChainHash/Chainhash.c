@@ -63,15 +63,17 @@ int Add(ChainHash *chain, Member data)
   return 0;
 }
 
-int Delete(ChainHash *chain, Member data);
+int Delete(ChainHash *chain, Member data){
+  
+}
 
 void PrintHash(ChainHash *chain){
   int i, size;
   size = chain->size;
   Node *ptr;
-  printf("==================== Printing HashTable ====================\n");
+  printf("====================<Printing HashTable>====================\n");
   for(i=0; i<size; i++){
-    printf("    [%d] -> ", i);
+    printf("    [%2d] -> ", i);
     ptr = chain->ChainNode[i];
     if(!ptr){ /* when ptr points nothing(NULL) */
       printf("[NULL]\n");
@@ -85,5 +87,5 @@ void PrintHash(ChainHash *chain){
       PrintMemberln(&ptr->member);
     }
   }
-  printf("=============================================================\n");
+  printf("=============================================================\n\n\n");
 }
