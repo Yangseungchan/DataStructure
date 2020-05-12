@@ -4,12 +4,11 @@
 
 void PrintMember(const Member *m)
 {
-  printf("NAME : %s, NO : %d", m->name, m->no);
+  printf("[#%3d / %s]", m->no, m->name);
 }
-
 void PrintMemberln(const Member *m)
 {
-  printf("NAME : %s, NO : %d\n", m->name, m->no);
+  printf("[#%3d / %s]\n", m->no, m->name);
 }
 
 int cmpMemberName(const Member *m1, const Member *m2)
@@ -25,18 +24,17 @@ int cmpMemberNo(const Member *m1, const Member *m2)
 Member ScanMember(char *message, int sw)
 {
   Member temp;
-  printf("Input member's information to %s", message);
+  printf("Input member's information to %s\n", message);
   if (sw & MEMBER_NAME)
   {
     printf("NAME : ");
     scanf("%s", temp.name);
   }
-
   if (sw & MEMBER_NO)
   {
     printf("NO : ");
     scanf("%d", &temp.no);
   }
-
+  printf("\n");
   return temp;
 }
