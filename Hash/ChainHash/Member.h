@@ -20,4 +20,4 @@ int cmpMemberNo(const Member *m1, const Member *m2);
 
 Member ScanMember(char *message, int sw);
 
-#endif __MEMBER_H__
+#endif
