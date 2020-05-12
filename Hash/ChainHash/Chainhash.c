@@ -125,8 +125,8 @@ void Terminate(ChainHash *chain)
       free(ptr);
       ptr = next;
     }
-    free(chain->ChainNode[i]);
   }
+  free(chain->ChainNode);
 }
 
 void PrintHash(ChainHash *chain)
