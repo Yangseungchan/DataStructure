@@ -1,6 +1,7 @@
 > **For your convenience to watch this project, I highly recommend you to watch it through Google Chrome or FireFox and install [this](https://github.com/BackMarket/github-mermaid-extension#install) extension program of your browser which is for rendering diagrams in Markdown.**
 
 <br/>
+
 <br/>
 
 # DataStructure based on C
@@ -22,6 +23,7 @@ It is the DataStructure based on C language. Here are the contents of this proje
 |            |        BitSet        |             Set that contains integer using unsigned int bit.             |   ★★☆☆☆☆   |
 |    Tree    |   BinarySearchTree   | The tree using Binary Search for inserting, deleting and searching nodes. |   ★★★★☆☆   |
 |            |    ExpressionTree    | The tree that contains expression which is converted from postfix expression.  |   ★★★★★☆   |
+|    Hash    |    ChainHashTable    | HashTable that uses chain for dealing with the collisions of key. |   ★★★★☆☆   |
 
 <br/>
 
