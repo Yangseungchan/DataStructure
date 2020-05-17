@@ -14,7 +14,7 @@ typedef enum menu
 
 Menu ScanMenu()
 {
-  int menu;
+  Menu menu;
   printf("============<SELECT THE MENU THAT YOU WANT TO DO>============\n");
   printf("(1) ADDING NEW NODE     (2) DELETING NODE\n");
   printf("(3) SEARCHING THE NODE  (4) PRINTING HASHTABLE\n");
@@ -59,6 +59,7 @@ int main(void)
         printf("TRYING TO ADD NODE IS FAILURE; TRY AGAIN\n\n");
       }
       break;
+
     case DELETE_NODE:
       new_member = ScanMember("DELETE", MEMBER_NAME);
       status = Delete(&ch, new_member.name);
@@ -71,8 +72,9 @@ int main(void)
         printf("DELETE PROCESS IS DONE!\n\n");
       }
       break;
+
     case SEARCH:
-      new_member = ScanMember("DELETE", MEMBER_NAME);
+      new_member = ScanMember("SEARCH", MEMBER_NAME);
       status = Search(&ch, new_member.name);
       if (status >= 0)
       {
@@ -83,9 +85,11 @@ int main(void)
         printf("SEARCH IS FAILED; THE NAME YOU INPUT DOES NOT EXIST\n\n");
       }
       break;
+
     case PRINT_TABLE:
       PrintHash(&ch);
       break;
+
     case TERMINATE:
       Terminate(&ch);
       printf("The Chain HashTable is removed\n\n");
