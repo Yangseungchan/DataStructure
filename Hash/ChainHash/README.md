@@ -233,11 +233,17 @@ It is the function that **adds the new Node into HashTable**. **Based on the dat
 
 <br/>
 
-### Case 1 : Node pointer in HashTable at key value's position points _NULL_.
+### Case 1 : Node pointer in HashTable at key th points _NULL_.
 
 <br/>
 
 <br/>
+
+![ChainHash_Figure3-2](Figure that describes the the Node pointer in the key points nothing)
+
+<br/>
+
+In this case, what you have to do is just **inserting the new node into HashTable by connecting the new node with Node pointer in key th position** like above _Figure 3-2_.
 
 <br/>
 
@@ -247,17 +253,55 @@ It is the function that **adds the new Node into HashTable**. **Based on the dat
 
 <br/>
 
-### B-1. BinNode *\_Pop(BNStack *stk)
+![ChainHash_Figure3-3](Figure that describes the Node pointer in the key points something)
 
 <br/>
 
-It is the function that **pops the top component of stack and returns the top BinNode**.
+In this case, you have to do **two things** to insert new node. First, you have to **find whether the new node's name or no is already used by other existing nodes**. By using **cmpMemberName and cmpMemberNo in Member.c**, you can detect any repeated name or no. If so, the task for **adding new node is failed**.
+
+<br/>
+
+Next, **if repeated things are not detected**, you have to **find the Node that its next pointer points nothing to look for the postiion to be inserted**. 
+
+<br/>
+
+These processes are repeated until the current node's next pointer points nothing like above _Figure 3-3_. After they are done, the new node is inserted.
 
 <br/>
 
 <br/>
 
-Other functions are skipped as there is no big difference compared to [CharStack](https://github.com/Yangseungchan/DataStructure-based-on-C/blob/master/Tree/ExpressionTree/CharStack.c)
+## 3-2-E. int Delete(ChainHash *chain, char *name)
+
+<br/>
+
+<br/>
+
+![ChainHash_Figure3-4](Figure that describes the situation that compares the two names' keys)
+
+<br/>
+
+It is the function that deletes the node in the HashTable which has same name with the given input name. For doing so, you have to get the key value from given input name. By using HashFunc, you can get the key value. After that, using given key value, you have to reach to the Node pointer in key th HashTable. Searching through all Node in the key th ChainHash, it compares the input name with the name in the selected node. If two names are considered to be same by strcmp in <string.h>, then the selected node should be deleted. For making existing nodes be connected with each other except the node to be deleted, the two pointers that points Node are needed. On this function, tmp and prev are used. Pointer tmp points the target node to be deleted and prev points the node which is front of the node pointed by pointer tmp.
+
+<br/>
+
+After it finds the target node to be deleted by using strcmp, it checks whether the tmp points a node. If not so, the deletion processes are failed as there is nothing to be deleted. If tmp points something, there are two cases for deletion.
+
+<br/>
+
+### Case 1 : Prev points a node. 
+
+<br/>
+
+<br/>
+
+It is the case the node in front of the target node 
+
+<br/>
+
+### case 2 : Prev points nothing.
+
+<br/>
 
 <br/>
 
