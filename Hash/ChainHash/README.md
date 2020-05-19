@@ -61,7 +61,7 @@ The other way is called **Chaining method**. **Chaining** is the method that con
 Each method has **advantages** and **disadvantages**. In case of **Open Address**, as each table's blank is filled with only one node, this method **requires only O(1) when searching one node**. However, as **it should find blank table until the new node can be inserted** into blank table, **it requires more time when the node is inserted** than **Chaining method**. And also, **its capacity of nodes are limited to its table size**. On the other hand, in case of **Chaining method**, unlike the **Open Address**, it **doesn't have to find any blank node for insertion** as **it inserts new node by linking with existing node**. But, it can **spend more time to search specific node** as it is **chained with other nodes** like _Figure 1-4._
 
 <br/>
-  
+
 In this chapter, instead of **Open Address** method, the **Chaining method** will be introduced.
 
 <br/>
@@ -103,41 +103,64 @@ To do so, at first, **it finds the last position of the LinkedList** by **checki
 <br/>
 
 ```mermaid
+
 graph LR
+
 A(Chain HashTable) --- B(int size)
+
 A --- C(Node **ChainNode)
+
 B --- D[Integer that contains the size of HashTable]
+
 C --> F(Node *)
+
 C --> G(Node *)
+
 C --> K( ... )
+
 F --> F1(Node)
+
 F1 --> F2(Node)
+
 F2 --> F3(Node)
+
 F3 --> F4( ... )
+
 G --> G1(Node)
+
 G1 --> G2(Node)
+
 G2 --> G3(Node)
+
 G3 --> G4( ... )
+
 ```
 
 <br/>
 
 ```mermaid
+
 graph LR
+
 A(Node) --- B(Member)
+
 A --- C(struct Node *next)
+
 B --- D(char *name)
+
 B --- E(int no)
+
 C --> F(Node)
+
+
 
 ```
 
 <br/>
 
-
 - **ChainHash** has integer value **which contains the size of the HashTable** and **Node double pointer** which points the **Node pointer** that points the **Node**.
 
-- **Node** contains **structure Member** and **Node pointer next** which **points the next Node**.
+* **Node** contains **structure Member** and **Node pointer next** which **points the next Node**.
 
 - **Member** contains **char type pointer(actually the char type array)** and the **integer value** that contains **number(no)**.
 
@@ -198,7 +221,7 @@ It is the function that **initializes the Chain HashTable**. To create **Chain s
 <br/>
 
 <br/>
-  
+
 ## 3-2-B. int HashFunc(char *name, ChainHash *chain)
 
 <br/>
@@ -239,11 +262,11 @@ It is the function that **adds the new Node into HashTable**. **Based on the dat
 
 <br/>
 
-![ChainHash_Figure3-2](Figure that describes the the Node pointer in the key points nothing)
+![ChainHash_Figure3-2](https://i.imgur.com/MG2X0sA.png)
 
 <br/>
 
-In this case, what you have to do is just **inserting the new node into HashTable by connecting the new node with Node pointer in key th position** like above _Figure 3-2_.
+In this case, what you have to do is just **inserting the new node into HashTable by connecting the new node with Node pointer in key th position**.
 
 <br/>
 
@@ -253,19 +276,19 @@ In this case, what you have to do is just **inserting the new node into HashTabl
 
 <br/>
 
-![ChainHash_Figure3-3](Figure that describes the Node pointer in the key points something)
+![ChainHash_Figure3-3](https://i.imgur.com/zSP7IxZ.png)
 
 <br/>
 
-In this case, you have to do **two things** to insert new node. First, you have to **find whether the new node's name or no is already used by other existing nodes**. By using **cmpMemberName and cmpMemberNo in Member.c**, you can detect any repeated name or no. If so, the task for **adding new node is failed**.
+In this case, you have to do **two things** to insert new node. **First**, you have to **find whether the new node's name or no is already used by other existing nodes**. By using **cmpMemberName and cmpMemberNo in Member.c**, you can detect any repeated name or no. If so, the task for **adding new node is failed**.
 
 <br/>
 
-Next, **if repeated things are not detected**, you have to **find the Node that its next pointer points nothing to look for the postiion to be inserted**. 
+**Next, if repeated things are not detected**, you have to **find the Node that its next pointer points nothing to look for the postiion to be inserted**.
 
 <br/>
 
-These processes are repeated until the current node's next pointer points nothing like above _Figure 3-3_. After they are done, the new node is inserted.
+These processes are repeated **until the current node's next pointer points nothing** like above _Figure 3-3_. After they are done, the **new node is inserted into that position**.
 
 <br/>
 
@@ -289,13 +312,13 @@ After it finds the target node to be deleted by using strcmp, it checks whether 
 
 <br/>
 
-### Case 1 : Prev points a node. 
+### Case 1 : Prev points a node.
 
 <br/>
 
 <br/>
 
-It is the case the node in front of the target node 
+It is the case the node in front of the target node
 
 <br/>
 
