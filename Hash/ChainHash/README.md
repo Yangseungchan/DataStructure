@@ -300,15 +300,23 @@ These processes are repeated **until the current node's next pointer points noth
 
 <br/>
 
-![ChainHash_Figure3-4](Figure that describes the situation that compares the two names' keys)
+![ChainHash_Figure3-4](https://i.imgur.com/Owx0IQL.png)
 
 <br/>
 
-It is the function that deletes the node in the HashTable which has same name with the given input name. For doing so, you have to get the key value from given input name. By using HashFunc, you can get the key value. After that, using given key value, you have to reach to the Node pointer in key th HashTable. Searching through all Node in the key th ChainHash, it compares the input name with the name in the selected node. If two names are considered to be same by strcmp in <string.h>, then the selected node should be deleted. For making existing nodes be connected with each other except the node to be deleted, the two pointers that points Node are needed. On this function, tmp and prev are used. Pointer tmp points the target node to be deleted and prev points the node which is front of the node pointed by pointer tmp.
+It is the function that **deletes the node in the HashTable** **which has same name with the given input name.** For doing so, you have to **get the key value from given input name.** By using **HashFunc which creates key value**, you can get the key value. After that, **using given key value, you have to reach to the Node pointer in key th** HashTable. **Searching through all Nodes in the key th** ChainHash, it **compares the input name with the name in the selected node**. If **two names are considered to be same by strcmp in <string.h>**, then the **selected node should be deleted**.
 
 <br/>
 
-After it finds the target node to be deleted by using strcmp, it checks whether the tmp points a node. If not so, the deletion processes are failed as there is nothing to be deleted. If tmp points something, there are two cases for deletion.
+**For making existing nodes to be connected** with each other nodes **except the node to be deleted**, the **two pointers that points Node are needed**. On this function, **tmp** and **prev** are used. Pointer **tmp points the target node to be deleted** and **prev points the node** which is **in front of the node pointed by pointer tmp**.
+
+<br/>
+
+![ChainHash_Figure3-5](https://i.imgur.com/uzZc3Br.png)
+
+<br/>
+
+After it finds the target node to be deleted by using **strcmp**, it **checks whether the tmp points a node**. **If not so or tmp points no node, the deletion processes are failed** as there is nothing to be deleted. However, **if it finds the same name in other node with tmp,** there are **two cases for deleting a node**.
 
 <br/>
 
@@ -316,9 +324,18 @@ After it finds the target node to be deleted by using strcmp, it checks whether 
 
 <br/>
 
+![ChainHash_Figure3-6](https://i.imgur.com/nAREbp6.png)
+
 <br/>
 
-It is the case the node in front of the target node
+![ChainHash_Figure3-7](https://i.imgur.com/pfjXWLA.png)
+
+<br/>
+
+
+It is the case **when the target node is positioned after at least one node**. In this case, as you should delete only the node which is pointed by pointer tmp, **you still have to preserve the connection between the nodes.** For doing so, you have to **connect the node that is pointed by pointer prev and the node which is pointed by tmp->next** like _Figure 3-7_.
+
+<br/>
 
 <br/>
 
@@ -326,11 +343,31 @@ It is the case the node in front of the target node
 
 <br/>
 
-<br/>
+![ChainHash_Figure3-8](https://i.imgur.com/u4sRVzI.png)
 
 <br/>
 
-## 3-1-C. ExpressionTree.c
+![ChainHash_Figure3-9](https://i.imgur.com/kLemw3n.png)
+
+<br/>
+
+It is the case when **prev points nothing** which means that **tmp points the node which is pointed by Node pointer in key th HashTable** like _Figure 3-8_. In this case, what you just have to do is connecting **Node pointer** with **the node which is pointed by tmp->next** like _Figure 3-9_.
+
+<br/>
+
+<br/>
+
+![ChainHash_Figure3-10](https://i.imgur.com/5r4xkFV.png)
+
+<br/>
+
+After these processes of connection are done, **you have to delete the target node** which is **pointed by pointer tmp**. The **processes of removing tmp's node** are done like _Figure 3-10_. First, you have to **remove the relationship between tmp node with tmp->next's node**. After that, **you must make the tmp node free**. After all these processes are done, the removing node process is finally finished.
+
+<br/>
+
+## 3-2-F. int Search(ChainHash *chain, char *name)
+
+It is the function that finds the node in hashtable using name.
 
 <br/>
 
