@@ -12,7 +12,7 @@
 
 <br/>
 
-![ChainHash_Figure1-1](https://i.imgur.com/O7dBcWU.png)
+![ChainHash_Figure1-1](./images/ChainHash_Figure1-1.png)
 
 <br/>
 
@@ -22,7 +22,7 @@ The general data structures that I have introduced has some problems of wasting.
 
 <br/>
 
-![CahinHash_Figure1-2](https://i.imgur.com/GavPx77.png)
+![CahinHash_Figure1-2](./images/ChainHash_Figure1-2.png)
 
 <br/>
 
@@ -42,11 +42,11 @@ However, the HashTable can cause another problem which is called **collision**. 
 
 <br/>
 
-![ChainHash_Figure1-3](https://i.imgur.com/TRBqtv4.png)
+![ChainHash_Figure1-3](./images/ChainHash_Figure1-3.png)
 
 <br/>
 
-![ChainHash_Figure1-4](https://i.imgur.com/beOSJgH.png)
+![ChainHash_Figure1-4](./images/ChainHash_Figure1-4.png)
 
 <br/>
 
@@ -74,11 +74,11 @@ In this chapter, instead of **Open Address** method, the **Chaining method** wil
 
 <br/>
 
-![ChainHash_Figure1-5](https://i.imgur.com/3BUtmID.png)
+![ChainHash_Figure1-5](./images/ChainHash_Figure1-5.png)
 
 <br/>
 
-![ChanHash_Figure1-6](https://i.imgur.com/OUEKs4F.png)
+![ChanHash_Figure1-6](./images/ChainHash_Figure1-6.png)
 
 <br/>
 
@@ -228,7 +228,7 @@ It is the function that **initializes the Chain HashTable**. To create **Chain s
 
 <br/>
 
-![ChainHash_Figure3-1](https://i.imgur.com/qgZ1NPg.png)
+![ChainHash_Figure3-1](./images/ChainHash_Figure3-1.png)
 
 <br/>
 
@@ -262,7 +262,7 @@ It is the function that **adds the new Node into HashTable**. **Based on the dat
 
 <br/>
 
-![ChainHash_Figure3-2](https://i.imgur.com/MG2X0sA.png)
+![ChainHash_Figure3-2](./images/ChainHash_Figure3-2.png)
 
 <br/>
 
@@ -276,7 +276,7 @@ In this case, what you have to do is just **inserting the new node into HashTabl
 
 <br/>
 
-![ChainHash_Figure3-3](https://i.imgur.com/zSP7IxZ.png)
+![ChainHash_Figure3-3](./images/ChainHash_Figure3-3.png)
 
 <br/>
 
@@ -300,7 +300,7 @@ These processes are repeated **until the current node's next pointer points noth
 
 <br/>
 
-![ChainHash_Figure3-4](https://i.imgur.com/Owx0IQL.png)
+![ChainHash_Figure3-4](./images/ChainHash_Figure3-4.png)
 
 <br/>
 
@@ -312,7 +312,7 @@ It is the function that **deletes the node in the HashTable** **which has same n
 
 <br/>
 
-![ChainHash_Figure3-5](https://i.imgur.com/uzZc3Br.png)
+![ChainHash_Figure3-5](./images/ChainHash_Figure3-5.png)
 
 <br/>
 
@@ -324,14 +324,13 @@ After it finds the target node to be deleted by using **strcmp**, it **checks wh
 
 <br/>
 
-![ChainHash_Figure3-6](https://i.imgur.com/nAREbp6.png)
+![ChainHash_Figure3-6](./images/ChainHash_Figure3-6.png)
 
 <br/>
 
-![ChainHash_Figure3-7](https://i.imgur.com/pfjXWLA.png)
+![ChainHash_Figure3-7](./images/ChainHash_Figure3-7.png)
 
 <br/>
-
 
 It is the case **when the target node is positioned after at least one node**. In this case, as you should delete only the node which is pointed by pointer tmp, **you still have to preserve the connection between the nodes.** For doing so, you have to **connect the node that is pointed by pointer prev and the node which is pointed by tmp->next** like _Figure 3-7_.
 
@@ -343,11 +342,11 @@ It is the case **when the target node is positioned after at least one node**. I
 
 <br/>
 
-![ChainHash_Figure3-8](https://i.imgur.com/u4sRVzI.png)
+![ChainHash_Figure3-8](./images/ChainHash_Figure3-8.png)
 
 <br/>
 
-![ChainHash_Figure3-9](https://i.imgur.com/kLemw3n.png)
+![ChainHash_Figure3-9](./images/ChainHash_Figure3-9.png)
 
 <br/>
 
@@ -357,7 +356,7 @@ It is the case when **prev points nothing** which means that **tmp points the no
 
 <br/>
 
-![ChainHash_Figure3-10](https://i.imgur.com/5r4xkFV.png)
+![ChainHash_Figure3-10](./images/ChainHash_Figure3-10.png)
 
 <br/>
 
@@ -367,71 +366,37 @@ After these processes of connection are done, **you have to delete the target no
 
 ## 3-2-F. int Search(ChainHash *chain, char *name)
 
-It is the function that finds the node in hashtable using name.
-
 <br/>
 
-### C-1. int is_digit(char \*token)
-
-<br/>
-
-It is the function that **checks whether the given token(a collection of chars) is number or not**. It checks **two conditions** to confirm it. **One condition is checking the return value of function atoi** which changes the given string into number and **returns 0 if given token is not number**. **Second condition is the given string is not "0" using strcmp** because there can be cases that the given token is "0". By theses conditions, the given token is decided to be digit then it returns _TRUE(1)_. Else it returns _FALSE(0)_.
+It is the function that **finds the node in the HashTable which has same name**. First, based on the hash function, it **finds the key value using given name**. And then it **searches through the key th hashtable to find the node which has same name**. Most of the processes which are done for searching **are similar to the processes of removing node**.
 
 <br/>
 
 <br/>
 
-### C-2. BinNode \*MakeExpTree(char expression[MAXEXP])
+## 3-2-G. void Terminate(ChainHash \*chain)
+
+<br/>
+
+![ChainHash_Figure3-11](./images/ChainHash_Figure3-11.png)
+
+<br/>
+
+It is the function that **disorganizes the HashTable by deallocating all nodes in HashTable**. While doing it, **two pointers(ptr, next) are required to disorganize the HashTable**. Pointer **ptr is the pointer that points the target node to be deleted**. And pointer **next points the node which is behind of the node that is pointed by ptr**. Once **ptr and next points a node**, it starts to **deallocate the node pointed by ptr**. And then **the pointer ptr and next is moved to next node**. **These processes are repeated until it clears all nodes**.
 
 <br/>
 
 <br/>
 
-![ExpressionTree_Figure3-1](./images/ExpressionTree_Figure3-1.png)
+## 3-2-H. void PrintHash(ChainHash \*chain)
 
 <br/>
 
-It is the function that **makes expression tree using given postfix expression**. This function can be expressed as the above _Figure 3-1_.
+![ChainHash_Figure3-12](./images/ChainHash_Figure3-12.png)
 
 <br/>
 
-As I mentioned in **_chapter 1-B_**, the process of converting to expression tree becomes different by checking that the digit is read or not using function **is_digit**. When the **digit is read**, **the new node for BinaryTree is created and contains the read digit** like upper one in _Figure 1-2-1_. However, **if the read one is not digit but operator** then **the new node that contains operator is created popping two nodes in Stack for creating new subtree** like lower one in _Figure 1-2-1_.
-
-<br/>
-
-These processes **are repeated until there is no more things to be read in given postfix expression**. After that, the **root node of expression tree becomes a node at top of the stack** which is returned at the end of this function. Before returning the root node. **it clears out the allocated stack** which is **used for converting process**.
-
-<br/>
-
-<br/>
-
-### C-3. int EvaluateExpTree(BinNode \*nde)
-
-<br/>
-
-<br/>
-
-![ExpressionTree_Figure3-2](./images/ExpressionTree_Figure3-2.png)
-
-<br/>
-
-![ExpressionTree_Figure3-3](./images/ExpressionTree_Figure3-3.png)
-
-<br/>
-
-It is the function that **evaluates the total value of the given expression tree**. As you can see the code of this function, it is **recursive function**. The reason I made this function as recursive function is that the converted expression tree is **the collection of subtrees**. As you can see in _Figure 3-2_, the converted expression tree can be considered as the **collection of subtree which has one operator with two operands.** That's why the expression tree can be expressed easier like the _Figure 3-3_.
-
-<br/>
-
-Based on these facts, calculating the expression tree should be done **after calculating left subtree and right subtree**. After **finishing calculation of left subtree and right subtree** which becomes each left operand and right operand, **the calculation between these two operands is done based on the read operator**. And then it returns the result value to become the upper tree's operand.
-
-<br/>
-
-<br/>
-
-### C-4. showInfixExp(BinNode *nde), showPostfixExp(BinNode *nde), showPrefixExp(BinNode \*nde)
-
-It is the function that **converts the given expression tree into infix(or postfix or prefix) expression**. What you have to do is just **traveling the given tree as the appropriate order**. For example, function showInfixExp is supposed to **travel the expression tree by preorder traversal visiting in order of left child, root node, right child.** And for **improving the visuality**, whenever the root node value is printed, **the space(" ") is inserted.**
+It is the function that **prints the HashTable in the form of the ChainHashTable** like above _Figure 3-12_.
 
 <br/>
 
@@ -439,4 +404,4 @@ It is the function that **converts the given expression tree into infix(or postf
 
 # 4. Conclusion
 
-It is the program that **converts the given expression into expression tree and convert it into expression again**. As this program uses both stack and binary tree considering the rules of expression for realizing this function, it is considered one of the most complicated programs in my thought.
+It is the program that **realizes the HashTable based on the Chaining method**. As it includes the LinkedList for the chaining method, the Chain-HashTable is not that hard data structure to realize.
