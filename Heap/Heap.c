@@ -49,13 +49,14 @@ int HInsert(Heap *hp, HData data, Priority pr)
   int parentidx, childidx;
 
   childidx = hp->numofData + 1;
-  parentidx = GetParentIdx(childidx);
-  while (pr <= hp->HNArr[parentidx].pr) /* repeated until new inserted node's pr is higher than parent node; remember that the higher the prioirty, the lower the pr valus is */
-  {
-    childidx = parentidx;
+  if(hp->numofData >= 2){ /* below processes are done only if the numofdata is more than 1 */
     parentidx = GetParentIdx(childidx);
+    while (pr <= hp->HNArr[parentidx].pr) /* repeated until new inserted node's pr is higher than parent node; remember that the higher the prioirty, the lower the pr valus is */
+    {
+      childidx = parentidx;
+      parentidx = GetParentIdx(childidx);
+    }
   }
-
   nde.data = data;
   nde.pr = pr;
   hp->HNArr[childidx] = nde;
