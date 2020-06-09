@@ -2,20 +2,31 @@
 #include <stdlib.h>
 #include "Heap.h"
 
-int main(void){
+int compPR(HData d1, HData d2)
+{
+  return d1 <= d2 ? 1 : 0;
+}
+
+int main(void)
+{
 
   Heap hp;
-  InitHeap(&hp);
-  HInsert(&hp, 'A', 20);
-  PrintHeap(&hp); printf("\n\n\n");
-  HInsert(&hp, 'B', 5);
-  PrintHeap(&hp); printf("\n\n\n");
-  HInsert(&hp, 'K', 2);
-  PrintHeap(&hp); printf("\n\n\n");
-  HInsert(&hp, 'M', 1);
-  PrintHeap(&hp); printf("\n\n\n");
-  HInsert(&hp, 'X', 50);
-  PrintHeap(&hp); printf("\n\n\n");
+  InitHeap(&hp, compPR);
+  HInsert(&hp, 'K');
+  PrintHeap(&hp);
+  printf("\n\n\n");
+  HInsert(&hp, 'C');
+  PrintHeap(&hp);
+  printf("\n\n\n");
+  HInsert(&hp, 'Z');
+  PrintHeap(&hp);
+  printf("\n\n\n");
+  HInsert(&hp, 'Y');
+  PrintHeap(&hp);
+  printf("\n\n\n");
+  HInsert(&hp, 'A');
+  PrintHeap(&hp);
+  printf("\n\n\n");
 
   printf("===DELETE===\n\n\n");
   printf("DELETE : %c\n", HDelete(&hp));

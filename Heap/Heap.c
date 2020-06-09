@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include "Heap.h"
 
-void InitHeap(Heap *hp) /* function that initializes the Heap */
+void InitHeap(Heap *hp, PRComp prc) /* function that initializes the Heap */
 {
+  hp->cmp = prc;
   hp->numofData = 0;
 }
 
@@ -38,68 +39,69 @@ int GetHighPrChIdx(Heap *hp, int idx) /* function that returns child node index 
   else /* left and right child node exists */
   {
     rightchildidx = GetRChildIdx(idx);
-    return hp->HNArr[leftchildidx].pr <= hp->HNArr[rightchildidx].pr ? leftchildidx : rightchildidx;
+    return hp->cmp(hp->HNArr[leftchildidx].data, hp->HNArr[rightchildidx].data) == 1 ? leftchildidx : rightchildidx;
     /* return the index of the child node which has higher priority(=lower priority value) */
   }
 }
 
-int HInsert(Heap *hp, HData data, Priority pr)
+void HInsert(Heap *hp, HData data)
 {
   HNode nde;
 
   int parentidx, childidx;
 
   childidx = hp->numofData + 1;
-  if(hp->numofData >= 2){ /* below processes are done only if the numofdata is more than 1 */
+  if (hp->numofData >= 2) /* below processes are done only if the numofdata is more than 1 */
+  {
     parentidx = GetParentIdx(childidx);
-    while (pr <= hp->HNArr[parentidx].pr) /* repeated until new inserted node's pr is higher than parent node; remember that the higher the prioirty, the lower the pr value is */
+    while (hp->cmp(data, hp->HNArr[parentidx].data)) /* repeated until new inserted node's pr is higher than parent node; remember that the higher the prioirty, the lower the pr value is */
     {
-      hp->HNArr[childidx] = hp->HNArr[parentidx]; /* reset the node in childidx with the node in parentidx */
+      hp->HNArr[childidx] = hp->HNArr[parentidx]; /* change the node at childidx as the node at parentidx */
       childidx = parentidx;
       parentidx = GetParentIdx(childidx);
-      if(parentidx <= 0){
+      if (parentidx <= 0)
+      {
         break;
       }
     }
   }
   nde.data = data;
-  nde.pr = pr;
   hp->HNArr[childidx] = nde;
   hp->numofData++;
-  return 0;
 }
 
 HData HDelete(Heap *hp)
 {
-  if(hp->numofData < 1){
+  if (hp->numofData < 1)
+  {
     return -1;
   }
   int parentidx, childidx;
-  Priority pr = hp->HNArr[hp->numofData].pr; /* priortiy of the node which is positioned at the right-lowest node */
   HData retData = hp->HNArr[1].data;
 
   parentidx = 1;
-  hp->numofData--;    /* numofData should be decreased by 1 as it affects the function GetHighPrChIdx */
+  hp->numofData--;                          /* numofData should be decreased by 1 as it affects the function GetHighPrChIdx */
   childidx = GetHighPrChIdx(hp, parentidx); /* child node index which has the highest priority */
 
-  while (childidx = GetHighPrChIdx(hp, parentidx)) 
+  while (childidx = GetHighPrChIdx(hp, parentidx))
   /* why childidx should not be 0?-> as func GetHighPrChIdx returns 0 when it has no left child of given index's node*/
   {
-    if(pr < hp->HNArr[childidx].pr){  /* should be repeated until parent node's priority is lower than the highest child node's priority */
+    if (hp->cmp(hp->HNArr[hp->numofData].data, hp->HNArr[childidx].data)) /* should be repeated until parent node's priority is lower than the highest child node's priority */
+    {
       break;
     }
     hp->HNArr[parentidx] = hp->HNArr[childidx];
     parentidx = childidx;
   }
   hp->HNArr[parentidx].data = hp->HNArr[hp->numofData + 1].data;
-  hp->HNArr[parentidx].pr = pr;
 
   return retData;
 }
 
 void PrintHeap(const Heap *hp) /* function that prints the heap in array */
 {
-  for(int i=1; i <= hp->numofData; i++){
+  for (int i = 1; i <= hp->numofData; i++)
+  {
     printf("%c ", hp->HNArr[i].data);
   }
   putchar('\n');
