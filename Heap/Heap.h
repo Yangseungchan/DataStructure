@@ -30,6 +30,8 @@ int GetHighPrChIdx(Heap *hp, int idx); /* function that returns child node index
 
 int HInsert(Heap *hp, HData data, Priority pr); /* function that inserts new data into heap */
 
-int HDelete(Heap *hp); /* function that deletes a node which has the highest priority */
+HData HDelete(Heap *hp); /* function that deletes a node which has the highest priority */
+
+void PrintHeap(const Heap *hp); /* function that prints the heap in array */
 
 #endif
