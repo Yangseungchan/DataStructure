@@ -74,21 +74,22 @@ HData HDelete(Heap *hp)
   if(hp->numofData < 1){
     return -1;
   }
-  
   int parentidx, childidx;
   Priority pr = hp->HNArr[hp->numofData].pr; /* priortiy of the node which is positioned at the right-lowest node */
   HData retData = hp->HNArr[1].data;
 
   parentidx = 1;
-  hp->numofData--;                          /* numofData should be decreased by 1 as it affects the function GetHighPrChIdx */
+  hp->numofData--;    /* numofData should be decreased by 1 as it affects the function GetHighPrChIdx */
   childidx = GetHighPrChIdx(hp, parentidx); /* child node index which has the highest priority */
-  while (pr >= hp->HNArr[childidx].pr && childidx > 0)     
-   /* repeated until parent node's priority is lower than the highest child node's priority */
-   /* why childidx should be bigger than 0?-> as func GetHighPrChIdx returns 0 when it has no left child of given index's node*/
+
+  while (childidx = GetHighPrChIdx(hp, parentidx)) 
+  /* why childidx should not be 0?-> as func GetHighPrChIdx returns 0 when it has no left child of given index's node*/
   {
+    if(pr < hp->HNArr[childidx].pr){  /* should be repeated until parent node's priority is lower than the highest child node's priority */
+      break;
+    }
     hp->HNArr[parentidx] = hp->HNArr[childidx];
     parentidx = childidx;
-    childidx = GetHighPrChIdx(hp, parentidx);
   }
   hp->HNArr[parentidx].data = hp->HNArr[hp->numofData + 1].data;
   hp->HNArr[parentidx].pr = pr;
