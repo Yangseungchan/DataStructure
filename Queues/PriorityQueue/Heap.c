@@ -74,7 +74,7 @@ HData HDelete(Heap *hp)
 {
   if (hp->numofData < 1)
   {
-    return -1;
+    return NULL;
   }
   int parentidx, childidx;
   HData retData = hp->HNArr[1].data;
@@ -100,9 +100,16 @@ HData HDelete(Heap *hp)
 
 void PrintHeap(const Heap *hp) /* function that prints the heap in array */
 {
-  for (int i = 1; i <= hp->numofData; i++)
+  if (hp->numofData <= 0)
   {
-    printf("%c ", hp->HNArr[i].data);
+    printf("EMPTY\n");
   }
-  putchar('\n');
+  else
+  {
+    for (int i = 1; i <= hp->numofData; i++)
+    {
+      printf("%c ", hp->HNArr[i].data);
+    }
+    putchar('\n');
+  }
 }
