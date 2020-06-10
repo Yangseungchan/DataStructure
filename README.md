@@ -10,20 +10,21 @@ It is the DataStructure based on C language. Here are the contents of this proje
 
 <br/>
 
-| CATEGORIZE |         NAME         |                                  FEATURE                                  | Difficulty |
-| :--------: | :------------------: | :-----------------------------------------------------------------------: | :--------: |
-|    List    |      ArrayList       |                     The list which is based on Array                      |   ★☆☆☆☆☆   |
-|            |      LinkedList      |        The list which is based on Node and connected with pointer         |   ★★☆☆☆☆   |
-|            |      CursorList      | The list which is described as linkedlist logically but is based on Array |   ★★★★☆☆   |
-|            |  CircularDoubleList  |       The list which is CircularLinkedList combined with DoubleList       |   ★★★★☆☆   |
-|   Stack    |        Stack         |                     The array that stacks the datas.                      |   ★☆☆☆☆☆   |
-|            | Expression Convertor |        The expression convertor from infix to postfix using stack         |   ★★★★☆☆   |
-|   Queue    |        Queue         |              The array that features FIFO using ring buffer.              |   ★★☆☆☆☆   |
-|    Set     |        IntSet        |                Set that contains integers based on Array.                 |   ★☆☆☆☆☆   |
-|            |        BitSet        |             Set that contains integer using unsigned int bit.             |   ★★☆☆☆☆   |
-|    Tree    |   BinarySearchTree   | The tree using Binary Search for inserting, deleting and searching nodes. |   ★★★★☆☆   |
-|            |    ExpressionTree    | The tree that contains expression which is converted from postfix expression.  |   ★★★★★☆   |
-|    Hash    |    ChainHashTable    | HashTable that uses chain for dealing with the collisions of key. |   ★★★★☆☆   |
+| CATEGORIZE |         NAME         |                                    FEATURE                                    | Difficulty |
+| :--------: | :------------------: | :---------------------------------------------------------------------------: | :--------: |
+|    List    |      ArrayList       |                       The list which is based on Array                        |   ★☆☆☆☆☆   |
+|            |      LinkedList      |          The list which is based on Node and connected with pointer           |   ★★☆☆☆☆   |
+|            |      CursorList      |   The list which is described as linkedlist logically but is based on Array   |   ★★★★☆☆   |
+|            |  CircularDoubleList  |         The list which is CircularLinkedList combined with DoubleList         |   ★★★★☆☆   |
+|   Stack    |        Stack         |                       The array that stacks the datas.                        |   ★☆☆☆☆☆   |
+|            | Expression Convertor |          The expression convertor from infix to postfix using stack           |   ★★★★☆☆   |
+|   Queues   |        Queue         |                The array that features FIFO using ring buffer.                |   ★★☆☆☆☆   |
+|            |    Priority Queue    |                   The Queue using Priority realized by Heap                   |   ★★★☆☆☆   |
+|    Set     |        IntSet        |                  Set that contains integers based on Array.                   |   ★☆☆☆☆☆   |
+|            |        BitSet        |               Set that contains integer using unsigned int bit.               |   ★★☆☆☆☆   |
+|    Tree    |   BinarySearchTree   |   The tree using Binary Search for inserting, deleting and searching nodes.   |   ★★★★☆☆   |
+|            |    ExpressionTree    | The tree that contains expression which is converted from postfix expression. |   ★★★★★☆   |
+|    Hash    |    ChainHashTable    |       HashTable that uses chain for dealing with the collisions of key.       |   ★★★★☆☆   |
 
 <br/>
 
