@@ -25,3 +25,15 @@ void PrintPrQ(PrQueue *q) /* function that prints the priority queue */
 {
     PrintHeap(&(q->hp));
 }
+
+int IsEmpty(PrQueue *q) /* function that indicates whether the queue is empty */
+{
+}
+
+int IsFull(PrQueue *q) /* function that indicates whether the queue is full */
+{
+}
+
+void Clear(PrQueue *q) /* function that clears all datas and itself */
+{
+}

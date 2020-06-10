@@ -74,7 +74,7 @@ HData HDelete(Heap *hp)
 {
   if (hp->numofData < 1)
   {
-    return NULL;
+    return null;
   }
   int parentidx, childidx;
   HData retData = hp->HNArr[1].data;
