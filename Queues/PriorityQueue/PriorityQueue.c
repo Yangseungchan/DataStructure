@@ -28,12 +28,23 @@ void PrintPrQ(PrQueue *q) /* function that prints the priority queue */
 
 int IsEmpty(PrQueue *q) /* function that indicates whether the queue is empty */
 {
+  if(q->hp.numofData <= 0){
+    return TRUE;
+  }
+  return FALSE;
 }
 
 int IsFull(PrQueue *q) /* function that indicates whether the queue is full */
 {
+  if(q->hp.numofData >= MAXIMUM){
+    return TRUE;
+  }
+  return FALSE;
 }
 
 void Clear(PrQueue *q) /* function that clears all datas and itself */
 {
+  while(q->hp.numofData > 0){
+    Dequeue(q);
+  }
 }

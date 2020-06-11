@@ -2,7 +2,8 @@
 #define __HEAP_H__
 
 #define MAXNUM 100
-#define null '\0'
+#define TRUE 0
+#define FALSE -1
 
 typedef char HData;
 typedef int PRComp(HData d1, HData d2);

@@ -72,10 +72,6 @@ void HInsert(Heap *hp, HData data)
 
 HData HDelete(Heap *hp)
 {
-  if (hp->numofData < 1)
-  {
-    return null;
-  }
   int parentidx, childidx;
   HData retData = hp->HNArr[1].data;
 
