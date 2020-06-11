@@ -36,7 +36,7 @@ int IsEmpty(PrQueue *q) /* function that indicates whether the queue is empty */
 
 int IsFull(PrQueue *q) /* function that indicates whether the queue is full */
 {
-  if(q->hp.numofData >= MAXIMUM){
+  if(q->hp.numofData >= MAXNUM){
     return TRUE;
   }
   return FALSE;

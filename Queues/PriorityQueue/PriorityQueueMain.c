@@ -28,7 +28,7 @@ Menu ScanMenu()
     printf("MENU : "); scanf("%d", &menu);
   }
   printf("\n\n");
-  printf("=============================================================\n\n");=
+  printf("=============================================================\n\n");
   return menu;
 }
 
@@ -45,14 +45,28 @@ int main(void)
       switch(menu)
       {
         case ENQUEUE:
-          printf("Input the data that you want to enqueue : ");
-          scanf("%c", &data);
-          Enqueue(&Prq, data);
+          if(IsFull(&Prq))
+          {
+            printf("Priority Queue is full; Failed to enqueue\n\n\n");
+          }
+          else
+          {
+            printf("Input the data that you want to enqueue(ONE CHARACTER) : ");
+            scanf(" %c", &data);
+            Enqueue(&Prq, data);
+          }
           printf("\n\n\n");
           break;
 
         case DEQUEUE:
-          printf("Dequeued data : %c\n\n\n\n", Dequeue(&Prq));
+          if(IsEmpty(&Prq))
+          {
+            printf("Priority Queue is empty; Failed to dequeue\n\n\n");
+          }
+          else
+          {
+            printf("Dequeued data : %c\n\n\n\n", Dequeue(&Prq));
+          }
           break;
 
         case PRINTHEAP:
@@ -87,8 +101,8 @@ int main(void)
         default:
           break;
       }
-    }while(menu != 6)
+    }while(menu != 6);
 
 
-    return 0;
+  return 0;
 }

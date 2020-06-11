@@ -51,7 +51,7 @@ void HInsert(Heap *hp, HData data)
   int parentidx, childidx;
 
   childidx = hp->numofData + 1;
-  if (hp->numofData >= 2) /* below processes are done only if the numofdata is more than 1 */
+  if (hp->numofData >= 1) /* below processes are done only if the numofdata is more than 1 */
   {
     parentidx = GetParentIdx(childidx);
     while (hp->cmp(data, hp->HNArr[parentidx].data)) /* repeated until new inserted node's pr is higher than parent node; remember that the higher the prioirty, the lower the pr value is */
@@ -75,11 +75,9 @@ HData HDelete(Heap *hp)
   int parentidx, childidx;
   HData retData = hp->HNArr[1].data;
 
-  parentidx = 1;
-  hp->numofData--;                          /* numofData should be decreased by 1 as it affects the function GetHighPrChIdx */
-  childidx = GetHighPrChIdx(hp, parentidx); /* child node index which has the highest priority */
+  parentidx = 1;                          /* numofData should be decreased by 1 as it affects the function GetHighPrChIdx */
 
-  while (childidx = GetHighPrChIdx(hp, parentidx))
+  while (childidx = GetHighPrChIdx(hp, parentidx))  /* child node index which has the highest priority */
   /* why childidx should not be 0?-> as func GetHighPrChIdx returns 0 when it has no left child of given index's node*/
   {
     if (hp->cmp(hp->HNArr[hp->numofData].data, hp->HNArr[childidx].data)) /* should be repeated until parent node's priority is lower than the highest child node's priority */
@@ -89,8 +87,8 @@ HData HDelete(Heap *hp)
     hp->HNArr[parentidx] = hp->HNArr[childidx];
     parentidx = childidx;
   }
-  hp->HNArr[parentidx].data = hp->HNArr[hp->numofData + 1].data;
-
+  hp->HNArr[parentidx].data = hp->HNArr[hp->numofData].data;
+  hp->numofData--;    
   return retData;
 }
 
