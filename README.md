@@ -1,4 +1,4 @@
-> **For your convenience to watch this project, I highly recommend you to watch it through Google Chrome or FireFox and install [this](https://github.com/BackMarket/github-mermaid-extension#install) extension program of your browser which is for rendering diagrams in Markdown.**
+> **For your convenience to watch this project, I highly recommend you to watch it through Google Chrome or FireFox and install [this](https://chrome.google.com/webstore/detail/github-%20-mermaid/goiiopgdnkogdbjmncgedmgpoajilohe) extension program of your browser which is for rendering diagrams in Markdown.**
 
 <br/>
 
