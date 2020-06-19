@@ -19,7 +19,7 @@ It is the DataStructure based on C language. Here are the contents of this proje
 |   Stack    |        Stack         |                       The array that stacks the datas.                        |   ★☆☆☆☆☆   |
 |            | Expression Convertor |          The expression convertor from infix to postfix using stack           |   ★★★★☆☆   |
 |   Queues   |        Queue         |                The array that features FIFO using ring buffer.                |   ★★☆☆☆☆   |
-|            |    Priority Queue    |                   The Queue using Priority realized by Heap                   |   ★★★☆☆☆   |
+|            |    Priority Queue    |                   The Queue using Priority realized by Heap                   |   ★★★★☆☆   |
 |    Set     |        IntSet        |                  Set that contains integers based on Array.                   |   ★☆☆☆☆☆   |
 |            |        BitSet        |               Set that contains integer using unsigned int bit.               |   ★★☆☆☆☆   |
 |    Tree    |   BinarySearchTree   |   The tree using Binary Search for inserting, deleting and searching nodes.   |   ★★★★☆☆   |
