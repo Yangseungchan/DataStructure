@@ -12,7 +12,7 @@
 
 <br/>
 
-![PriorityQueue_Figure1-1](https://i.imgur.com/UszlaDQ.png)
+![PriorityQueue_Figure1-1](./images/PriorityQueue_Figure1-1.png)
 
 <br/>
 
@@ -38,7 +38,7 @@ Because the PriorityQueue derives from the queue, it can also be realized by the
 
 <br/>
 
-![PriorityQueue_Figure1-2](https://i.imgur.com/stFJm8G.png)
+![PriorityQueue_Figure1-2](./images/PriorityQueue_Figure1-2.png)
 
 <br/>
 
@@ -48,7 +48,7 @@ If you try to **insert new data** into **PriorityQueue based on Array,** you hav
 
 <br/>
 
-![PriorityQueue_Figure1-3](https://i.imgur.com/rpp0Ybr.png)
+![PriorityQueue_Figure1-3](./images/PriorityQueue_Figure1-3.png)
 
 <br/>
 
@@ -68,7 +68,7 @@ Even though if you **try to do realize the PriorityQueue with LinkedList,** it a
 
 <br/>
 
-![PriorityQueue_Figure1-4](https://i.imgur.com/4Msfw26.png)
+![PriorityQueue_Figure1-4](./images/PriorityQueue_Figure1-4.png)
 
 <br/>
 
@@ -84,7 +84,7 @@ When you try to **insert new node into PriorityQueue based on LinkedList**, **as
 
 <br/>
 
-![PriorityQueue_Figure1-5](https://i.imgur.com/SXCGTBo.png)
+![PriorityQueue_Figure1-5](./images/PriorityQueue_Figure1-5.png)
 
 <br/>
 
@@ -110,7 +110,7 @@ And the **special condition for Perfect-Binarytree to be Heap** is that **the hi
 
 <br/>
 
-![PriorityQueue_Figure2-1](https://i.imgur.com/JMkrgJh.png)
+![PriorityQueue_Figure2-1](./images/PriorityQueue_Figure2-1.png)
 
 <br/>
 
@@ -120,7 +120,7 @@ The processes of Insertion is largely divided into two phases. First phase is **
 
 <br/>
 
-![PriorityQueue_Figure2-2](https://i.imgur.com/76DW7tn.png)
+![PriorityQueue_Figure2-2](./images/PriorityQueue_Figure2-2.png)
 
 <br/>
 
@@ -130,15 +130,15 @@ After that, second phase is **adjusting the position of the new node according t
 
 <br/>
 
-![PriorityQueue_Figure2-3](https://i.imgur.com/DCISttq.png)
+![PriorityQueue_Figure2-3](./images/PriorityQueue_Figure2-3.png)
 
 <br/>
 
-![PriorityQueue_Figure2-4](https://i.imgur.com/nCZ2YGM.png)
+![PriorityQueue_Figure2-4](./images/PriorityQueue_Figure2-4.png)
 
 <br/>
 
-![PriorityQueue_Figure2-5](https://i.imgur.com/Ws5CVRt.png)
+![PriorityQueue_Figure2-5](./images/PriorityQueue_Figure2-5.png)
 
 <br/>
 
@@ -148,7 +148,7 @@ At _Figure 2-3_, which is **after swapping each other**, the **new node should b
 
 <br/>
 
-![PriorityQueue_Figure2-6](https://i.imgur.com/bYhpvY9.png)
+![PriorityQueue_Figure2-6](./images/PriorityQueue_Figure2-6.png)
 
 <br/>
 
@@ -166,7 +166,7 @@ Unlike the previous data structures, the **heap doesn't require comparison of al
 
 <br/>
 
-![PriorityQueue_Figure2-7](https://i.imgur.com/SLf6Iax.png)
+![PriorityQueue_Figure2-7](./images/PriorityQueue_Figure2-7.png)
 
 <br/>
 
@@ -176,11 +176,11 @@ The processes of deletion are also **largely divided into two phases**. First ph
 
 <br/>
 
-![PriorityQueue_Figure2-8](https://i.imgur.com/DbN2g1w.png)
+![PriorityQueue_Figure2-8](./images/PriorityQueue_Figure2-8.png)
 
 <br/>
 
-![PriorityQueue_Figure2-9](https://i.imgur.com/P3mSLeG.png)
+![PriorityQueue_Figure2-9](./images/PriorityQueue_Figure2-9.png)
 
 <br/>
 
@@ -218,7 +218,7 @@ Looking back to the previous chapters, the **Heap should be evaluated as one of 
 
 <br/>
 
-![PriorityQueue_Figure2-10](https://i.imgur.com/z8AWLvN.png)
+![PriorityQueue_Figure2-10](./images/PriorityQueue_Figure2-10.png)
 
 <br/>
 
@@ -228,7 +228,7 @@ However, it must be difficult if you try to do so. If you think about the proces
 
 <br/>
 
-![PriorityQueue_Figure2-11](https://i.imgur.com/7LJLLyB.png)
+![PriorityQueue_Figure2-11](./images/PriorityQueue_Figure2-11.png)
 
 <br/>
 
@@ -313,7 +313,6 @@ A(HNode) --- B(Node that contains HData)
 
 <br/>
 
-
 <br/>
 
 # 3. Functions
@@ -327,7 +326,6 @@ A(HNode) --- B(Node that contains HData)
 <br/>
 
 <br/>
-
 
 ## 3-1-A. void InitHeap(Heap \*hp, PRComp prc)
 
@@ -417,7 +415,7 @@ It is the function that **inserts new node into heap**. The **childidx** is assu
 
 <br/>
 
-![PriorityQueue_Figure2-2](https://i.imgur.com/76DW7tn.png)
+![PriorityQueue_Figure2-2](./images/PriorityQueue_Figure2-2.png)
 
 <br/>
 
@@ -427,11 +425,11 @@ After that, **only if the number of datas in heap is more than 1**, **adjustment
 
 <br/>
 
-![PriorityQueue_Figure3-1](https://i.imgur.com/QqPJMCA.png)
+![PriorityQueue_Figure3-1](./images/PriorityQueue_Figure3-1.png)
 
 <br/>
 
-![PriorityQueue_Figure3-2](https://i.imgur.com/JLWsYDf.png)
+![PriorityQueue_Figure3-2](./images/PriorityQueue_Figure3-2.png)
 
 <br/>
 
@@ -441,7 +439,7 @@ However, **to reduce the unnecessary movements** , **only movement from parentid
 
 <br/>
 
-![PriorityQueue_Figure3-3](https://i.imgur.com/Ia9QdYH.png)
+![PriorityQueue_Figure3-3](./images/PriorityQueue_Figure3-3.png)
 
 <br/>
 
@@ -457,7 +455,7 @@ After adjustments of priority is done, **finally, the new inserted node's data i
 
 <br/>
 
-![PriorityQueue_Figure2-7](https://i.imgur.com/SLf6Iax.png)
+![PriorityQueue_Figure2-7](./images/PriorityQueue_Figure2-7.png)
 
 <br/>
 
@@ -467,15 +465,15 @@ It is the function that **deletes a node which has the highest priority in the h
 
 <br/>
 
-![PriorityQueue_Figure3-4](https://i.imgur.com/88feMvZ.png)
+![PriorityQueue_Figure3-4](./images/PriorityQueue_Figure3-4.png)
 
 <br/>
 
-![PriorityQueue_Figure3-5](https://i.imgur.com/bcGZKOI.png)
+![PriorityQueue_Figure3-5](./images/PriorityQueue_Figure3-5.png)
 
 <br/>
 
-![PriorityQueue_Figure3-6](https://i.imgur.com/Q3jA270.png)
+![PriorityQueue_Figure3-6](./images/PriorityQueue_Figure3-6.png)
 
 <br/>
 
